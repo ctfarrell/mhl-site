@@ -12,8 +12,8 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Moose Hide Landing Parks and Rec!</a>
+        <h1 class="text-xl text-gray-600 uppercase font-bold">
+          Welcome to <a href="https://nextjs.org" class="animate-ping text-xl text-blue-600 uppercase font-bold">Moose Hide Landing Parks and Rec!</a>
         </h1>
 
         <p className={styles.description}>
