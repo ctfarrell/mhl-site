@@ -1,0 +1,10 @@
+{
+    "reservationDate": "2020-09-20 00:00:00", // comes from the date the user clicks on the page
+    "reserverName": "Chance Farrell", // future feature users will be able to create an account
+    "reserverEmail": "chance.farrell@yahoo.com", // future account info
+    "reserverPhone": "555-867-5309",
+    "reservableObject": {
+      "name": "pavilion1", // comes from the selection the user makes in the pavilion list
+      "city": "Moose Hide Landing"
+    }
+}

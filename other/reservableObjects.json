@@ -1,0 +1,6 @@
+{
+    "reservableName": "Name of Pavilion",
+    "reservableCapacity": 5,
+    "reservableCapacityUnits": "People",
+    "reservableCity": "Moose Hide Landing"
+}
