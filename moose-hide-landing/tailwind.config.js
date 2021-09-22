@@ -7,5 +7,8 @@ module.exports = {
   variants: {
     extend: {},
   },
+  fontFamily: {
+    sans: ['Graphik', 'sans-serif']
+  },
   plugins: [],
 }
