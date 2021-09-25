@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-export default function HomeOptions(props) { 
+export default function HomeOptions(props) {
     return(
     <div class="flex items-center cursor-pointer group p-3">
         <Image src={props.src} alt="Icon" layout="fixed" width="50" height="30" class="opacity-100 p-1" />
