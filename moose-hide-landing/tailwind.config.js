@@ -4,8 +4,8 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'fancy-office': "url('/public/screen_2x.jpg')",
-        'horsetrack': "url('/public/horsetrack_cropped.jpg')",
+        'fancy-office': "url('../public/screen_2x.jpg')",
+        'horsetrack': "url('../public/horsetrack_cropped.jpg')",
       }
     },
     minHeight: {
