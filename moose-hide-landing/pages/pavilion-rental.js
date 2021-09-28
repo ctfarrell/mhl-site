@@ -1,4 +1,6 @@
 import Head from 'next/head'
+import PavilionForm from '../public/pavilion'
+
 
 export default function Home() {
     return (
@@ -6,9 +8,9 @@ export default function Home() {
             <Head>
             <title>Moose Hide Landing Rec</title>
             <meta name="Your one stop shop for all your city recreation needs!" content="Moose Hide Landing Parks and Recreation" />
-            <link rel="icon" href="/favicon.ico" />
-            <script type="text/javascript" src="https://form.jotform.com/jsform/212667229817161"></script>
+            <link rel="icon" href="/favicon.ico"/>
             </Head>
+            <PavilionForm/>
         </div>
     )
 }

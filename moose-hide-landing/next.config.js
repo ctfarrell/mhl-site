@@ -3,4 +3,7 @@ module.exports = {
   images: {
     domains:["www.canva.com"],
   },
+  scripts: {
+    domains:["www.form.jotform.com"],
+  },
 }
