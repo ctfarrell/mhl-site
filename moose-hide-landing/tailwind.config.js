@@ -2,7 +2,12 @@ module.exports = {
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'fancy-office': "url('/public/screen_2x.jpg')",
+        'horsetrack': "url('/public/horsetrack_cropped.jpg')",
+      }
+    },
     minHeight: {
       '0': '0',
       '1/4': '25%',
@@ -13,7 +18,9 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      animation:['hover'],
+    },
   },
   fontFamily: {
     sans: ['Graphik', 'sans-serif']

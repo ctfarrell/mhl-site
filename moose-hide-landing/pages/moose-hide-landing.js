@@ -22,10 +22,6 @@ export default function Home() {
             </span>
             <span className="flex md:flex-col justify-between pt-40 relative width-1200 height-400">
                 <div className = "flex-1 object-contain flex-col relative">
-                    <HomeOptions src="/icon-gov.png" alt="leaf icon" optionName="GOVERNMENT" className="z-50"></HomeOptions>
-                    <HomeOptions src="/icon-community.png" alt="leaf icon" optionName="COMMUNITY" className="z-50"></HomeOptions>
-                    <HomeOptions src="/icon-services.png" alt="leaf icon" optionName="SERVICES" className="z-50"></HomeOptions>
-                    <HomeOptions src="/icon-reservations.png" alt="leaf icon" optionName="RESERVATIONS" className="z-50"></HomeOptions>
                 </div>
                 <div className="flex-1 object-contain">
                     <Image src="/horsetrack_cropped.jpg" alt="Horse Track" layout="fill" width="200" height="400"  className="object-contain" />
