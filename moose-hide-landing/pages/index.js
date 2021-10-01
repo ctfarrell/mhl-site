@@ -28,19 +28,37 @@ export default function Home() {
                     </div>
             </span>
             <span className="flex flex-none h-4/5 flex-col md:flex-row md:h-screen z-10">
-                <div className="flex-1 h-4/5 w-screen md:w-1/2 md:h-screen  items-center justify-center bg-blue-200">
-                <ImLeaf color = "" className = "flex m-5 hover:animate-bounce" />
+                <div className="flex-1 place-items-center h-4/5 w-screen md:w-1/2 md:h-screen bg-white">
+                    <div className="flex flex-col p-40 align-middle">
+                        <HomeOptions src='/icon-gov.png' optionName='GOVERNMENT' height="798" width="800" />
+                        <HomeOptions src='/icon-community.png' optionName='COMMUNITY' height="465" width="800"/>
+                        <HomeOptions src='/icon-services.png' optionName='SERVICES' height="505" width="800"/>
+                        <HomeOptions src='/icon-reservations.png' optionName='RESERVATIONS' height="800" width="571"/>
+                    </div>
                 </div>
-                <div className="flex-1 h-screen w-screen md:w-1/2 object-contain object-left-top bg-horsetrack bg-cover bg-no-repeat">
+                <div className="flex-1 h-4/5 w-screen md:w-1/2 md:h-screen object-contain object-left-top bg-horsetrack bg-cover bg-no-repeat">
                 </div>
             </span>
             <span className="flex-none h-2/5 md:h-screen bg-green-800 z-20">
-                <h1 className="flex-none text-5xl text-white text-center">SERVICE CENTER</h1>
+                <Link href="service-center">
+                    <h1 className="flex-none text-5xl text-white text-center cursor-pointer">SERVICE CENTER</h1>
+                </Link>
+                <div className="h-100 w-100 bg-purple-700">
+                    <div className="flex flex-none rounded-full h-45 w-45 bg-white justify-center items-center">
+                        circle
+                    </div>
+                    <h1 className="font-serif text-white">Pavilion Rentals</h1>
+                    <h1 className="w-40 wrap">We provide diversified parks for field reservation</h1>
+
+                </div>
             </span>
             <span className="flex-none h-2/5 md:h-screen bg-green-800 z-20">
                 <Link href="/pavilion-rental">
                     <h1 className="flex-none text-5xl text-white text-center cursor-pointer">RESERVATION CENTER</h1>
                 </Link>
+                <div className="flex-none rounded-full h-45 w-45 bg-white justify-center items-center">
+                        circle
+                    </div>
             </span>
             <span className="flex flex-none h-4/5 flex-col md:flex-row md:h-scree">
                 <div className="flex-1 bg-blue-200">

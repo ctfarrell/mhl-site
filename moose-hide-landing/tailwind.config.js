@@ -6,6 +6,7 @@ module.exports = {
       backgroundImage: {
         'fancy-office': "url('../public/screen_2x.jpg')",
         'horsetrack': "url('../public/horsetrack_cropped.jpg')",
+        'leaf': "url('../public/leaf-icon1.png')",
       }
     },
     minHeight: {
@@ -19,7 +20,7 @@ module.exports = {
   },
   variants: {
     extend: {
-      animation:['hover'],
+      animation:['hover','group-hover'],
     },
   },
   fontFamily: {
