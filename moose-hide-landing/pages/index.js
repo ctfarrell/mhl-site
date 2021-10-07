@@ -41,22 +41,19 @@ export default function Home() {
                 <Link href="service-center">
                     <h1 className="flex-none text-5xl text-white text-center cursor-pointer">SERVICE CENTER</h1>
                 </Link>
-                <div className="h-100 w-100 bg-purple-700">
-                    <div className="flex flex-none rounded-full h-45 w-45 bg-white justify-center items-center">
-                        circle
-                    </div>
-                    <h1 className="font-serif text-white">Pavilion Rentals</h1>
-                    <h1 className="w-40 wrap">We provide diversified parks for field reservation</h1>
-
+                <div className="flex flex-row self-center justify-items-center">
+                    <div className="rounded-full h-20 w-20 bg-white self-center "></div>
+                    <div className="rounded-full h-20 w-20 bg-white "></div>
+                    <div className="rounded-full h-20 w-20 bg-white "></div>
                 </div>
             </span>
-            <span className="flex-none h-2/5 md:h-screen bg-green-800 z-20">
+            <span className="flex-none w-screen h-2/5 md:h-screen bg-green-800 z-20">
                 <Link href="/pavilion-rental">
-                    <h1 className="flex-none text-5xl text-white text-center cursor-pointer">RESERVATION CENTER</h1>
+                    <h1 className="text-5xl text-white text-center cursor-pointer">RESERVATION CENTER</h1>
                 </Link>
-                <div className="flex-none rounded-full h-45 w-45 bg-white justify-center items-center">
-                        circle
-                    </div>
+                <div className="rounded-full h-20 w-20 bg-white "></div>
+                <div className="rounded-full h-20 w-20 bg-white "></div>
+                <div className="rounded-full h-20 w-20 bg-white "></div>
             </span>
             <span className="flex flex-none h-4/5 flex-col md:flex-row md:h-scree">
                 <div className="flex-1 bg-blue-200">
@@ -64,6 +61,7 @@ export default function Home() {
                 </div>
                 <div className="flex-1 bg-red-200">
                     <p>calendar of events</p>
+                    <div className="rounded-full h-20 w-20 bg-white">lol</div>
                 </div>
             </span>
         </div>
