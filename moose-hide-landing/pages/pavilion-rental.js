@@ -10,7 +10,7 @@ export default function Home() {
             <meta name="Your one stop shop for all your city recreation needs!" content="Moose Hide Landing Parks and Recreation" />
             <link rel="icon" href="/favicon.ico"/>
             </Head>
-            <JotformEmbed src="https://form.jotform.com/212667229817161" />>
+            <JotformEmbed src="https://form.jotform.com/212667229817161" />
         </div>
     )
 }
