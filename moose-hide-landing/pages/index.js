@@ -2,9 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import HomeOptions from '../modules/homeOptions'
-import {ImLeaf} from 'react-icons/im'
 
-import {GiMoneyStack} from 'react-icons/gi'
 
 export default function Home() {
     return (
@@ -14,9 +12,9 @@ export default function Home() {
             <meta name="Your one stop shop for all your city recreation needs!" content="Moose Hide Landing Parks and Recreation" />
             <link rel="icon" href="/favicon.ico" />
             </Head>
-            <div className="fixed container flex flex-row border-b-2 border-gray-800 bg-white bg-opacity-100 shadow-sm">
+            <div className="fixed w-screen flex flex-row border-b-2 justify-between border-gray-800 bg-white bg-opacity-100 shadow-sm">
                 <h1 className="text-2xl text-gray-800">MOOSE HIDE LANDING TOWN WEBSITE</h1>
-                <h1 className="text-2xl text-gray-800 place-self-end">Sept 29, 2021</h1>
+                <h1 className="text-2xl text-gray-800">{new Date().toLocaleString() + ''}</h1>
             </div>
             <span className="flex flex-none place-items-center h-2/5 w-screen md:h-screen object-contain bg-fancy-office bg-cover bg-no-repeat">
                     <div className="flex flex-col mx-auto align-items-center bg-white bg-opacity-70">
