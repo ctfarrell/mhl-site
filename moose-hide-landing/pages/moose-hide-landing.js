@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import HomeOptions from '../modules/homeOptions'
 
 export default function Home() {
     return (
