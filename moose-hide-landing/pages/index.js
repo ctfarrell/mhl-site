@@ -1,7 +1,8 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import HomeOptions from '../modules/homeOptions'
+import HomeOptions from '../modules/HomeOptions'
+import OptionBubbles from '../modules/OptionBubbles'
 
 
 export default function Home() {
@@ -42,18 +43,20 @@ export default function Home() {
                     <h1 className="flex-none text-5xl text-white text-center cursor-pointer">SERVICE CENTER</h1>
                 </Link>
                 <div className="flex flex-row self-center justify-items-center">
-                    <div className="rounded-full h-20 w-20 bg-white self-center "></div>
-                    <div className="rounded-full h-20 w-20 bg-white "></div>
-                    <div className="rounded-full h-20 w-20 bg-white "></div>
+                    <OptionBubbles src="/payment.png" height="800" width="800" header="Make a Payment" subtext="Pay for your bills and tickets"/>
+                    <OptionBubbles src="/licensemgmt.png" height="575" width="800" header="License Management" subtext="Get your own Hunting, Boating, and Fishing Licenses"/>
+                    <OptionBubbles src="/garbage.png" height="800" width="625" header="Garbage Management" subtext="Learn how to recycle in Moose Hide Landing"/>
                 </div>
             </span>
             <span className="flex-none w-screen h-2/5 md:h-screen bg-green-800 z-20">
                 <Link href="/pavilion-rental">
                     <h1 className="text-5xl text-white text-center cursor-pointer">RESERVATION CENTER</h1>
                 </Link>
-                <div className="rounded-full h-20 w-20 bg-white "></div>
-                <div className="rounded-full h-20 w-20 bg-white "></div>
-                <div className="rounded-full h-20 w-20 bg-white "></div>
+                <div className="flex flex-row self-center justify-items-center">
+                    <OptionBubbles src="/pavilion.png" height="738" width="800" header="Pavilion Rentals" subtext="We provide diversified parks for field rentals"/>
+                    <OptionBubbles src="/sports.png" height="800" width="787" header="Sports Field" subtext="Make a plan and enjoy your favorite sports"/>
+                    <OptionBubbles src="/recreation.png" height="800" width="711" header="Other Recreation" subtext="Book an amazing experience"/>
+                </div>
             </span>
             <span className="flex flex-none h-4/5 flex-col md:flex-row md:h-scree">
                 <div className="flex-1 bg-blue-200">
