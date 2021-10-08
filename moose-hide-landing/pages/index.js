@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import HomeOptions from '../modules/HomeOptions'
+import HomeOptions from '../modules/MenuOptions'
 import OptionBubbles from '../modules/OptionBubbles'
 
 
