@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import HomeOptions from '../modules/HomeOptions';
-import OptionBubbles from '../modules/OptionBubbles';
+import HomeOptions from '../modules/HomeOptions'
+import OptionBubbles from '../modules/OptionBubbles'
 
 
 export default function Home() {
@@ -29,7 +29,7 @@ export default function Home() {
             <span className="flex flex-none h-4/5 flex-col md:flex-row md:h-screen z-10">
                 <div className="flex-1 place-items-center h-4/5 w-screen md:w-1/2 md:h-screen bg-white">
                     <div className="flex flex-col p-40 align-middle">
-                        <HomeOptions src='/icon-gov.png' optionName='GOVERNMENT' height="798" width="800" />
+                        <HomeOptions src='/icon-gov.png' optionName='GOVERNMENT' height="798" width="800"/>
                         <HomeOptions src='/icon-community.png' optionName='COMMUNITY' height="465" width="800"/>
                         <HomeOptions src='/icon-services.png' optionName='SERVICES' height="505" width="800"/>
                         <HomeOptions src='/icon-reservations.png' optionName='RESERVATIONS' height="800" width="571"/>

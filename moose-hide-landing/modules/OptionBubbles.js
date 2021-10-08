@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export default function OptionBubbles(props) {
     return(
-    <div class="flex flex-col h-80 w-80 place-items-center cursor-pointer group p-3">
+    <div className="flex flex-col h-80 w-80 place-items-center cursor-pointer group p-3">
         <div className="flex-none rounded-full h-1/2 w-1/2 bg-white ">
             <div className="object-contain place-items-center align-center p-4">
                 <Image src={props.src} alt="Icon" layout="responsive" width={props.width} height={props.height}/>
