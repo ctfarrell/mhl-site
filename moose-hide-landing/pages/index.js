@@ -3,6 +3,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import HomeOptions from '../modules/MenuOptions'
 import OptionBubbles from '../modules/OptionBubbles'
+import React, { useState } from 'react';
+import Calendar from 'react-calendar';
 
 
 export default function Home() {
@@ -27,8 +29,8 @@ export default function Home() {
                     </div>
             </span>
             <span className="flex flex-none h-4/5 flex-col md:flex-row md:h-screen z-10">
-                <div className="flex-1 place-items-center h-4/5 w-screen md:w-1/2 md:h-screen bg-white">
-                    <div className="flex flex-col p-40 align-middle">
+                <div className="container mx-auto place-items-center h-4/5 w-screen md:w-1/2 md:h-screen bg-white">
+                    <div className="flex flex-col p-40 align-middle place-self-auto">
                         <HomeOptions src='/icon-gov.png' optionName='GOVERNMENT' height="798" width="800"/>
                         <HomeOptions src='/icon-community.png' optionName='COMMUNITY' height="465" width="800"/>
                         <HomeOptions src='/icon-services.png' optionName='SERVICES' height="505" width="800"/>
@@ -40,9 +42,9 @@ export default function Home() {
             </span>
             <span className="flex-none h-2/5 md:h-screen bg-primary z-20">
                 <Link href="service-center">
-                    <h1 className="flex-none text-5xl text-white text-center cursor-pointer">SERVICE CENTER</h1>
+                    <h1 className="flex-none text-5xl text-white text-center cursor-pointer pt-14">SERVICE CENTER</h1>
                 </Link>
-                <div className="flex flex-row self-center justify-items-center">
+                <div className="flex flex-row pt-14 place-items-center bg-red-400">
                     <OptionBubbles src="/payment.png" height="800" width="800" header="Make a Payment" subtext="Pay for your bills and tickets"/>
                     <OptionBubbles src="/licensemgmt.png" height="575" width="800" header="License Management" subtext="Get your own Hunting, Boating, and Fishing Licenses"/>
                     <OptionBubbles src="/garbage.png" height="800" width="625" header="Garbage Management" subtext="Learn how to recycle in Moose Hide Landing"/>
@@ -63,8 +65,8 @@ export default function Home() {
                     <p>town news</p>
                 </div>
                 <div className="flex-1 bg-red-200">
-                    <p>calendar of events</p>
-                    <div className="rounded-full h-20 w-20 bg-white">lol</div>
+                    <Calendar
+                    />
                 </div>
             </span>
         </div>

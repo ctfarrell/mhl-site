@@ -8,6 +8,7 @@ module.exports = {
     colors: {
       primary: '#3a7356',
       white: colors.white,
+      red: colors.red,
     },
     extend: {
       backgroundImage: {
