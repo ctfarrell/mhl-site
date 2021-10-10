@@ -13,7 +13,7 @@ export default function Home() {
             <meta name="Your one stop shop for all your city recreation needs!" content="Moose Hide Landing Parks and Recreation" />
             <link rel="icon" href="/favicon.ico" />
             </Head>
-            <div className="fixed w-screen flex flex-row border-b-2 justify-between border-gray-800 bg-white bg-opacity-100 shadow-sm">
+            <div className="fixed w-screen flex flex-row border-b-2 justify-between border-gray-800 bg-white bg-opacity-100 z-50 shadow-sm">
                 <h1 className="text-2xl text-gray-800">MOOSE HIDE LANDING TOWN WEBSITE</h1>
                 <h1 className="text-2xl text-gray-800">{new Date().toLocaleString() + ''}</h1>
             </div>
