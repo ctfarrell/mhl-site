@@ -8,8 +8,8 @@ export default function UnderConstruction() {
                         <section className="flex justify-center pt-10 pb-2">
                             <Image src="/leaf-icon1.png" alt="Leaf Icon" layout="fixed" width="50" height="50" className="object-none object-center"/>
                         </section>
-                            <h1 className="text-5xl text-center align-middle text-green-800 py-5">SORRY!</h1>
-                            <h1 className="text-5xl text-center align-middle text-green-800 pb-10 px-10">THIS PAGE IS UNDER CONSTRUCTION</h1>
+                            <h1 className="text-5xl text-center align-middle text-primary py-5">SORRY!</h1>
+                            <h1 className="text-5xl text-center align-middle text-primary pb-10 px-10">THIS PAGE IS UNDER CONSTRUCTION</h1>
                     </div>
             </span>
         </div>

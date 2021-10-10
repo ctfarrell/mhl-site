@@ -22,8 +22,8 @@ export default function Home() {
                         <section className="flex justify-center pt-10 pb-2">
                             <Image src="/leaf-icon1.png" alt="Leaf Icon" layout="fixed" width="50" height="50" className="object-none object-center"/>
                         </section>
-                            <h1 className="text-5xl text-center align-middle text-green-800 py-5">TOWN OF</h1>
-                            <h1 className="text-5xl font-bold text-center align-middle text-green-800 pb-10 px-10">MOOSE HIDE LANDING</h1>
+                            <h1 className="text-5xl text-center align-middle text-primary py-5">TOWN OF</h1>
+                            <h1 className="text-5xl font-bold text-center align-middle text-primary pb-10 px-10">MOOSE HIDE LANDING</h1>
                     </div>
             </span>
             <span className="flex flex-none h-4/5 flex-col md:flex-row md:h-screen z-10">
@@ -38,7 +38,7 @@ export default function Home() {
                 <div className="flex-1 h-4/5 w-screen md:w-1/2 md:h-screen object-contain object-left-top bg-horsetrack bg-cover bg-no-repeat">
                 </div>
             </span>
-            <span className="flex-none h-2/5 md:h-screen bg-green-800 z-20">
+            <span className="flex-none h-2/5 md:h-screen bg-primary z-20">
                 <Link href="service-center">
                     <h1 className="flex-none text-5xl text-white text-center cursor-pointer">SERVICE CENTER</h1>
                 </Link>
@@ -48,7 +48,7 @@ export default function Home() {
                     <OptionBubbles src="/garbage.png" height="800" width="625" header="Garbage Management" subtext="Learn how to recycle in Moose Hide Landing"/>
                 </div>
             </span>
-            <span className="flex-none w-screen h-2/5 md:h-screen bg-green-800 z-20">
+            <span className="flex-none w-screen h-2/5 md:h-screen bg-primary z-20">
                 <Link href="/pavilion-rental">
                     <h1 className="text-5xl text-white text-center cursor-pointer">RESERVATION CENTER</h1>
                 </Link>
