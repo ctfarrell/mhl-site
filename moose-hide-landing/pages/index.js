@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import HomeOptions from '../modules/MenuOptions'
 import OptionBubbles from '../modules/OptionBubbles'
+import CalendarDates from '../modules/CalendarDates'
 import React, { useState } from 'react';
 import Calendar from 'react-calendar';
 
@@ -64,9 +65,15 @@ export default function Home() {
                 <div className="flex-1 bg-blue-200">
                     <p>town news</p>
                 </div>
-                <div className="flex-1 bg-red-200">
-                    <Calendar
-                    />
+                <div className="flex-1 flex-col">
+                    <h1 className= "text-5xl text-primary text-center pt-8">TOWN CALENDAR</h1>
+                    <div className = "mx-40 my-14 p-2 border-primary border-2 shadow-lg" >
+                    <Calendar />
+                    </div>
+                    <div className="flex flex-auto flex-row mx-40 my-8">
+                        <CalendarDates header="Sat Aug. 7" subtext="Moose Hide Landing Marathon"/>
+                        <CalendarDates header="Sat Aug. 28" subtext="Moose Hide Landing Music Festival"/>
+                    </div>
                 </div>
             </span>
         </div>
