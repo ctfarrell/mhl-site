@@ -33,7 +33,7 @@ export default function Home() {
                 <div className="container mx-auto place-items-center h-4/5 w-screen md:w-1/2 md:h-screen bg-white">
                     <div className="flex flex-col p-40 align-middle place-self-auto">
                         <HomeOptions src='/icon-gov.png' optionName='GOVERNMENT' height="798" width="800"/>
-                        <HomeOptions src='/icon-community.png' optionName='COMMUNITY' height="465" width="800"/>
+                        <HomeOptions src='/v1633901610/mhl/icon-community_pa8vop.png' optionName='COMMUNITY' height="465" width="800"/>
                         <HomeOptions src='/icon-services.png' optionName='SERVICES' height="505" width="800"/>
                         <HomeOptions src='/icon-reservations.png' optionName='RESERVATIONS' height="800" width="571"/>
                     </div>
@@ -42,7 +42,7 @@ export default function Home() {
                 </div>
             </span>
             <span className="flex-none h-2/5 md:h-screen bg-primary z-20">
-                <Link href="service-center">
+                <Link href="service-center" passHref>
                     <h1 className="flex-none text-5xl text-white text-center cursor-pointer pt-14">SERVICE CENTER</h1>
                 </Link>
                 <div className="flex flex-row pt-14 place-items-center bg-red-400">
@@ -52,7 +52,7 @@ export default function Home() {
                 </div>
             </span>
             <span className="flex-none w-screen h-2/5 md:h-screen bg-primary z-20">
-                <Link href="/pavilion-rental">
+                <Link href="/pavilion-rental" passHref>
                     <h1 className="text-5xl text-white text-center cursor-pointer">RESERVATION CENTER</h1>
                 </Link>
                 <div className="flex flex-row self-center justify-items-center">
