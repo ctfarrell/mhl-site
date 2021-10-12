@@ -5,6 +5,11 @@ module.exports = {
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    borderColor: {
+      primary: '#3a7356',
+      white: colors.white,
+      red: colors.red,
+    },
     colors: {
       primary: '#3a7356',
       white: colors.white,
@@ -15,6 +20,7 @@ module.exports = {
         'fancy-office': "url('../public/screen_2x.jpg')",
         'horsetrack': "url('../public/horsetrack_cropped.jpg')",
         'leaf': "url('../public/leaf-icon1.png')",
+        'mountain-lake': "url('../public/mountainlake1.png')",
       }
     },
     minHeight: {

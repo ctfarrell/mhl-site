@@ -42,7 +42,7 @@ export default function Home() {
                 </div>
             </span>
             <span className="flex-none h-2/5 md:h-screen bg-primary z-20">
-                <Link href="service-center" passHref>
+                <Link href="/service-center" passHref>
                     <h1 className="flex-none text-5xl text-white text-center cursor-pointer pt-14">SERVICE CENTER</h1>
                 </Link>
                 <div className="flex flex-row pt-14 place-items-center bg-red-400">
@@ -64,6 +64,7 @@ export default function Home() {
             <span className="flex flex-none h-4/5 flex-col md:flex-row md:h-scree">
                 <div className="flex-1 bg-blue-200">
                     <p>town news</p>
+                    <Link href="/pavilions" passHref> link to pavilions</Link>
                 </div>
                 <div className="flex-1 flex-col">
                     <h1 className= "text-5xl text-primary text-center pt-8">TOWN CALENDAR</h1>
