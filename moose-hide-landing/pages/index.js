@@ -7,6 +7,7 @@ import CalendarDates from '../modules/CalendarDates'
 import React, { useState } from 'react';
 import Calendar from 'react-calendar';
 import GovIcon from '../public/icon-gov.png';
+import leafIcon from '../public/leaf-icon1.png';
 
 
 export default function Home() {
@@ -24,7 +25,7 @@ export default function Home() {
             <span className="flex flex-none place-items-center h-2/5 w-screen md:h-screen object-contain bg-fancy-office bg-cover bg-no-repeat">
                     <div className="flex flex-col mx-auto align-items-center bg-white bg-opacity-70">
                         <section className="flex justify-center pt-10 pb-2">
-                            <Image src="https://res.cloudinary.com/dsf7hsxxm/image/upload/v1633901610/mhl/icon-community_pa8vop.png" alt="Leaf Icon" layout="fixed" width="50" height="50" className="object-none object-center"/>
+                            <Image src={leafIcon} alt="Leaf Icon" layout="fixed" width="50" height="50" className="object-none object-center"/>
                         </section>
                             <h1 className="text-5xl text-center align-middle text-primary py-5">TOWN OF</h1>
                             <h1 className="text-5xl font-bold text-center align-middle text-primary pb-10 px-10">MOOSE HIDE LANDING</h1>
