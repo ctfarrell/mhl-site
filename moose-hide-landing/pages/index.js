@@ -34,12 +34,6 @@ export default function Home() {
             <span className="flex flex-none h-4/5 flex-col md:flex-row md:h-screen z-10">
                 <div className="container mx-auto place-items-center h-4/5 w-screen md:w-1/2 md:h-screen bg-white">
                     <div className="flex flex-col p-40 align-middle place-self-auto">
-                        <div className="flex flex-row place-items-center cursor-pointer group p-3">
-                            <div className="h-14 w-14">
-                                <Image src={GovIcon} alt="Icon" layout="responsive" height="798" width="800"/>
-                            </div>
-                            <p className="text-4xl font-bold text-center align-middle text-primary group-hover:animate-bounce opacity-100 tracking-wide p-2">GOVERNMENT</p>
-                        </div>
                         <HomeOptions src={GovIcon} optionName='GOVERNMENT' height="798" width="800"/>
                         <HomeOptions src='/icon-community.png' optionName='COMMUNITY' height="465" width="800"/>
                         <HomeOptions src='/icon-services.png' optionName='SERVICES' height="505" width="800"/>
