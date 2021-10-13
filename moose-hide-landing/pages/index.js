@@ -40,7 +40,7 @@ export default function Home() {
                             </div>
                             <p className="text-4xl font-bold text-center align-middle text-primary group-hover:animate-bounce opacity-100 tracking-wide p-2">GOVERNMENT</p>
                         </div>
-                        <HomeOptions src='/v1633901610/mhl/icon-community_pa8vop.png' optionName='COMMUNITY' height="465" width="800"/>
+                        <HomeOptions src='/icon-community.png' optionName='COMMUNITY' height="465" width="800"/>
                         <HomeOptions src='/icon-services.png' optionName='SERVICES' height="505" width="800"/>
                         <HomeOptions src='/icon-reservations.png' optionName='RESERVATIONS' height="800" width="571"/>
                     </div>
