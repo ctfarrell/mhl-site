@@ -1,10 +1,18 @@
 import Head from 'next/head'
 import PavilionCard from '/components/PavilionCard';
 import Image from "next/image";
-
-
+import react, { useState, useRef } from 'react';
+import PavilionList from '/components/PavilionList'
 
 export default function Home() {
+    const [pavilionList, filterPavilions] = useState(['pavilion1', 'pavilion2'])
+    const groupCapacity = useRef()
+
+    function filterPavilionList(e) {
+        const groupCapacityForFilter = groupCapacity.current.value
+        console.log(groupCapacityForFilter)
+    }
+
     return (
         <div className="flex-col flex-1 justify-left content-left">
             <Head>
@@ -25,7 +33,11 @@ export default function Home() {
                             <h1 className="text-5xl font-bold text-center align-middle text-primary pb-10 px-10">PAVILIONS</h1>
                     </div>
             </span>
-            <PavilionCard pavilionName="Hide Pond Pavilion" pavilionText="Pavilion One is really nice." className="justify-self-start"/>
+            <span className="flex flex-row">
+                <h1 className="font-bold text-xl p-4">How many people are in your group?</h1>
+                <input ref={groupCapacity} type="text" className="border-2 border-gray focus:border-4 my-2"></input>
+                <button onClick={filterPavilionList} className="border-2 border-gray hover:font-xl m-2 px-2">Filter</button>
+            </span>
         </div>
     )
 }

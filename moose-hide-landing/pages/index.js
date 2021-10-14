@@ -119,7 +119,7 @@ export default function Home() {
                             </div>
                         </div>
                         <h1 className="italic group-hover:font-bold text-white text-xl text-center pt-8">Pavilion Rentals</h1>
-                        <h1 className="text-white text-xl text-center">We provide diversified parks for field rentals</h1>
+                        <h1 className="text-white group-hover:font-bold text-xl text-center">We provide diversified parks for field rentals</h1>
                     </div>
                     <div className="flex flex-col flex-none h-80 w-80 mx-auto place-items-center cursor-pointer place-self-auto group p-3">
                         <div className="flex-none rounded-full h-1/2 w-1/2 bg-white ">
@@ -144,7 +144,7 @@ export default function Home() {
             <span className="flex flex-none h-4/5 flex-col md:flex-row md:h-scree">
                 <div className="flex-1 bg-blue-200">
                     <p>town news</p>
-                    <Link href="/pavilions" passHref> link to pavilions</Link>
+                    <Link className="cursor-pointer hover:font-bold" href="/pavilions" passHref> link to pavilions</Link>
                 </div>
                 <div className="flex-1 flex-col">
                     <h1 className= "text-5xl text-primary text-center pt-8">TOWN CALENDAR</h1>
