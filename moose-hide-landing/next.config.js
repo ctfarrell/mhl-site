@@ -1,4 +1,5 @@
 module.exports = {
+  generateBuildId: () => 'build',
   reactStrictMode: true,
   images: {
     domains: ['localhost','res.cloudinary.com'],
