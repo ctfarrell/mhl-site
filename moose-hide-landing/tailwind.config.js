@@ -16,6 +16,7 @@ module.exports = {
       red: colors.red,
     },
     extend: {
+      fontWeight: ['group-hover'],
       backgroundImage: {
         'fancy-office': "url('../public/screen_2x.jpg')",
         'horsetrack': "url('../public/horsetrack_cropped.jpg')",
