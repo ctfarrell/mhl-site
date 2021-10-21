@@ -1,10 +1,8 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import PavilionCard from '/components/PavilionCard';
 import Image from "next/image";
 import react, { useState, useRef } from 'react';
 import PavilionList from '/components/PavilionList'
-//import {Sheet1} from '/public/pavilionSheet.json'
 import {LolPavilions} from '/components/LolPavilions'
 
 export default function Home() {
@@ -17,7 +15,7 @@ export default function Home() {
     function filterPavilionList(e) {
         const groupCapacityForFilter = parseInt(groupCapacity.current.value)
         console.log(typeof groupCapacityForFilter)
-        const filteredPavilionList = pavilion_list.filter(pavilion => pavilion.pavilion_id < groupCapacityForFilter)
+        const filteredPavilionList = _pavilionList.filter(pavilion => pavilion.pavilion_id <= groupCapacityForFilter)
         showPavilions(filteredPavilionList)
     }
 
