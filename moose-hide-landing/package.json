@@ -23,6 +23,9 @@
     "autoprefixer": "^10.3.4",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",
+    "install": "^0.13.0",
+    "json-loader": "^0.5.7",
+    "npm": "^8.1.0",
     "postcss": "^8.3.6",
     "tailwindcss": "^2.2.15"
   }

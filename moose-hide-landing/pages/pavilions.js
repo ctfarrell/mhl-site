@@ -3,16 +3,29 @@ import PavilionCard from '/components/PavilionCard';
 import Image from "next/image";
 import react, { useState, useRef } from 'react';
 import PavilionList from '/components/PavilionList'
+//import {Sheet1} from '/public/pavilionSheet.json'
+import {LolPavilions} from '/components/LolPavilions'
 
 export default function Home() {
-    const [pavilionList, filterPavilions] = useState(['pavilion1', 'pavilion2'])
+    const _pavilionList = LolPavilions
+    //const pav_list = JSON.parse(sheet1)
+    const [pavilion_list, showPavilions] = useState(_pavilionList)
+    //[{"pavilion_id":1,"pavilion_name":"super pavilion","pavilion_text":"this pavilion is awesome"},{"pavilion_id":2,"pavilion_name":"super pavilion","pavilion_text":"this pavilion is awesome"}])
     const groupCapacity = useRef()
 
     function filterPavilionList(e) {
         const groupCapacityForFilter = groupCapacity.current.value
         console.log(groupCapacityForFilter)
+        const filteredPavilionList = pavilion_list.filter(pavilion => pavilion.pavilion_id < groupCapacityForFilter)
+        showPavilions(filteredPavilionList)
     }
 
+    function clearFilter(e) {
+        showPavilions(_pavilionList)
+        document.getElementById("groupCapacityInput").value = ""
+    }
+
+    //console.log(pavilion_list)
     return (
         <div className="flex-col flex-1 justify-left content-left">
             <Head>
@@ -35,9 +48,11 @@ export default function Home() {
             </span>
             <span className="flex flex-row">
                 <h1 className="font-bold text-xl p-4">How many people are in your group?</h1>
-                <input ref={groupCapacity} type="text" className="border-2 border-gray focus:border-4 my-2"></input>
+                <input ref={groupCapacity} type="text" className="border-2 border-gray focus:border-4 my-2" id="groupCapacityInput"></input>
                 <button onClick={filterPavilionList} className="border-2 border-gray hover:font-xl m-2 px-2">Filter</button>
+                <button onClick={clearFilter} className="border-2 border-gray hover:font-xl m-2 px-2">Clear</button>
             </span>
+            <PavilionList list_of_pavilions={pavilion_list}/>
         </div>
     )
 }
