@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import PavilionCard from '/components/PavilionCard';
 import Image from "next/image";
 import react, { useState, useRef } from 'react';
@@ -14,8 +15,8 @@ export default function Home() {
     const groupCapacity = useRef()
 
     function filterPavilionList(e) {
-        const groupCapacityForFilter = groupCapacity.current.value
-        console.log(groupCapacityForFilter)
+        const groupCapacityForFilter = parseInt(groupCapacity.current.value)
+        console.log(typeof groupCapacityForFilter)
         const filteredPavilionList = pavilion_list.filter(pavilion => pavilion.pavilion_id < groupCapacityForFilter)
         showPavilions(filteredPavilionList)
     }
@@ -34,7 +35,9 @@ export default function Home() {
             <link rel="icon" href="/favicon.ico"/>
             </Head>
             <div className="fixed w-screen flex flex-row border-b-2 justify-between border-gray-800 bg-white bg-opacity-100 z-50 shadow-sm">
-                <h1 className="text-2xl text-gray-800">MOOSE HIDE LANDING TOWN WEBSITE</h1>
+                <Link href='/' passHref>
+                    <h1 className="text-2xl text-gray-800 cursor-pointer">MOOSE HIDE LANDING TOWN WEBSITE</h1>
+                </Link>
                 <h1 className="text-2xl text-gray-800">{new Date().toLocaleString() + ''}</h1>
             </div>
             <span className="flex flex-none place-items-center h-2/5 w-screen md:h-screen object-contain bg-mountain-lake bg-cover bg-no-repeat">

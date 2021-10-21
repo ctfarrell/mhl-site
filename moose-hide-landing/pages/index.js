@@ -8,7 +8,7 @@ import React, { useState } from 'react';
 import Calendar from 'react-calendar';
 // import what images we can statically
 import communityIcon from '../public/icon-community.png';
-import reservationsIcon from '../public/icon-services.png';
+import reservationsIcon from '../public/icon-reservations.png';
 import servicesIcon from '../public/icon-services.png';
 import govIcon from '../public/icon-gov.png';
 import leafIcon from '../public/leaf-icon1.png';
@@ -112,15 +112,17 @@ export default function Home() {
                     <h1 className="text-5xl text-white text-center cursor-pointer">RESERVATION CENTER</h1>
                 </Link>
                 <div className="flex flex-row self-center justify-items-center mt-10">
-                    <div className="flex flex-col flex-none h-80 w-80 mx-auto place-items-center cursor-pointer place-self-auto group p-3">
-                        <div className="flex-none rounded-full h-1/2 w-1/2 bg-white ">
-                            <div className="object-contain place-items-center align-center p-4">
-                                <Image src={pavilion} alt="Icon" layout="responsive"/>
+                    <Link href='/pavilions' passHref>
+                        <div className="flex flex-col flex-none h-80 w-80 mx-auto place-items-center cursor-pointer place-self-auto group p-3">
+                            <div className="flex-none rounded-full h-1/2 w-1/2 bg-white ">
+                                <div className="object-contain place-items-center align-center p-4">
+                                    <Image src={pavilion} alt="Icon" layout="responsive"/>
+                                </div>
                             </div>
+                            <h1 className="italic group-hover:font-bold text-white text-xl text-center pt-8">Pavilion Rentals</h1>
+                            <h1 className="text-white group-hover:font-bold text-xl text-center">We provide diversified parks for field rentals</h1>
                         </div>
-                        <h1 className="italic group-hover:font-bold text-white text-xl text-center pt-8">Pavilion Rentals</h1>
-                        <h1 className="text-white group-hover:font-bold text-xl text-center">We provide diversified parks for field rentals</h1>
-                    </div>
+                    </Link>
                     <div className="flex flex-col flex-none h-80 w-80 mx-auto place-items-center cursor-pointer place-self-auto group p-3">
                         <div className="flex-none rounded-full h-1/2 w-1/2 bg-white ">
                             <div className="object-contain place-items-center align-center p-4">
