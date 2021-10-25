@@ -22,6 +22,14 @@ module.exports = {
         'horsetrack': "url('../public/horsetrack_cropped.jpg')",
         'leaf': "url('../public/leaf-icon1.png')",
         'mountain-lake': "url('../public/mountainlake1.png')",
+        "tall-tree-pavilion":"url('../public/pavilion-images/tall-tree-pavilion.png')",
+        "wicker-pavilion":"url('../public/pavilion-images/wicker-pavilion.png')",
+        "earlywine-pavilion":"url('../public/pavilion-images/earlywine-pavilion.png')",
+        "rustic-pavilion":"url('../public/pavilion-images/rustic-pavilion.png')",
+        "ranch-pavilion":"url('../public/pavilion-images/ranch-pavilion.png')",
+        "cedar-pavilion":"url('../public/pavilion-images/cedar-pavilion.png')",
+        "valley-pavilion":"url('../public/pavilion-images/valley-pavilion.png')",
+        "lake-pavilion":"url('../public/pavilion-images/lake-pavilion.png')",
       }
     },
     minHeight: {

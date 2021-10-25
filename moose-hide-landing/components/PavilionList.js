@@ -8,7 +8,7 @@ export default function PavilionList(props) {
     return(
         props.list_of_pavilions.map(pav =>{
     return(
-        <PavilionCard key={pav.pavilion_id} pavilionCapacity = {pav.pavilion_id} pavilionName={pav.pavilion_name} pavilionText={pav.pavilion_text}/>
+        <PavilionCard key={pav.pavilion_id} pavilionCapacity = {pav.pavilion_capacity} pavilionName={pav.pavilion_name} pavilionText={pav.pavilion_text} pavilionImage = {pav.pavilion_image}/>
     )
 }
 )

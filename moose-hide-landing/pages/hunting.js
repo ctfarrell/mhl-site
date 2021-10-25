@@ -16,8 +16,8 @@ export default function Hunting() {
                 </Link>
                 <h1 className="text-2xl text-gray-800">{new Date().toLocaleString() + ''}</h1>
             </div>
-            <div className = "h-1/2 w-screen">
-                <div className = "bg-red-800 w-1/4 h-1/2">
+            <div className = "flex flex-none flex-row h-screen w-screen">
+                <div className = "flex bg-red-800 w-1/4 h-1/2">
                     Fox Image
 
 
@@ -26,17 +26,17 @@ export default function Hunting() {
 
                     help
                 </div>
-                <div className = "bg-primary w-3/4 h-1/2">
-                    Moose Hide Landing 
+                <div className = "flex bg-primary w-3/4 h-1/2 text-center justify-items-center">
+                    Moose Hide Landing
                     is now in Colorado!
                 </div>
             </div>
-            <div className = "w-screen h-1/2 bg-blue-300">
-                <div>
+            <div className = "flex w-screen h-1/2 bg-blue-300">
+                <div className = "flex bg-purple-800 w-1/4 h-1/2">
                     Elk Photo
                 </div>
-                <div>
-                    <button className = "bg-primary">
+                <div className = "flex bg-black w-2/3 h-1/2">
+                    <button className = "flex bg-primary">
                         Learn More
                     </button>
                 </div>
