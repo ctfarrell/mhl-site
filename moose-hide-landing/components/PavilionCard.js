@@ -9,8 +9,9 @@ export default function PavilionCard(props) {
     const pavilion_image = "../public/pavilion-images/" + props.pavilionImage + ".png"
     const uriObject = {
         id: props.pavilionName,
-        title: props.pavilionId
+        capacity: props.pavilionCapacity,
     };
+    console.log(uriObject)
     return(
     <div className="flex flex-col place-items-center text-left place-self-auto group ">
         <div className="flex flex-none flex-row h-18 w-screen justify-between bg-primary ">
