@@ -1,5 +1,8 @@
 import Image from "next/image";
-import Link from 'next/link'
+import Link from 'next/link';
+import cedarPavilion from '../public/pavilion-images/cedar-pavilion.png';
+
+
 
 
 export default function PavilionCard(props) {
@@ -24,8 +27,8 @@ export default function PavilionCard(props) {
         </div>
         <div className = "flex w-screen justify-between flex-row">
             <p className="pl-10 wrap text-2xl text-left justify-self-left pt-8">{props.pavilionText}</p>
-            <div className = "flex-none h-60 w-1/3">
-                <img src = {pavilion_image} alt = {pavilion_image} height="200" width = "100"></img>
+            <div className = "flex-1 justify-self-right h-60 w-1/3">
+                <Image src = {cedarPavilion} layout = "intrinsic" height="300" width = "400" />
             </div>
         </div>
     </div>
