@@ -53,9 +53,8 @@ export default function Home() {
                 <button onClick={filterPavilionList} className="border-2 rounded-md border-gray hover:font-xl m-2 px-2">Filter</button>
                 <button onClick={clearFilter} className="border-2 border-gray rounded-md hover:font-xl m-2 px-2">Clear</button>
             </span>
-            <div className = "space-y-1">
-                <PavilionList list_of_pavilions={pavilion_list}/>
-            </div>
+            <PavilionList list_of_pavilions={pavilion_list}/>
+            <div className="flex-none h-1/3 w-screen bg-red-400 z-20">Future Footer</div>
         </div>
     )
 }
