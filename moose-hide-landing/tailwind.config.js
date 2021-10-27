@@ -44,6 +44,9 @@ module.exports = {
   variants: {
     extend: {
       animation:['hover','group-hover'],
+      borderColor:['hover'],
+      borderStyle: ['responsive', 'hover'],
+      borderWidth: ['responsive', 'hover'],
     },
   },
   fontFamily: {

@@ -1,3 +1,14 @@
+import lion from '../public/pavilion-images/lion-pavilion.png'
+import cedar from '../public/pavilion-images/cedar-pavilion.png'
+import earlywine from '../public/pavilion-images/earlywine-pavilion.png'
+import lake from '../public/pavilion-images/lake-pavilion.png'
+import ranch from '../public/pavilion-images/ranch-pavilion.png'
+import rustic from '../public/pavilion-images/rustic-pavilion.png'
+import tall from '../public/pavilion-images/tall-tree-pavilion.png'
+import valley from '../public/pavilion-images/valley-pavilion.png'
+import wicker from '../public/pavilion-images/wicker-pavilion.png'
+import hilltop from '../public/pavilion-images/hilltop-pavilion.png'
+
 export const LolPavilions = [
     {
       "pavilion_id": 1,
@@ -6,7 +17,8 @@ export const LolPavilions = [
       "pavilion_capacity": 47,
       "pavilion_location": "North",
       "pavilion_schedule": "Weekdays",
-      "pavilion_image": "tall-tree-pavilion"
+      "pavilion_image": "tall-tree-pavilion",
+      "pavilion__image": tall
     },
     {
       "pavilion_id": 2,
@@ -15,7 +27,8 @@ export const LolPavilions = [
       "pavilion_capacity": 10,
       "pavilion_location": "North",
       "pavilion_schedule": "Weekends",
-      "pavilion_image": "wicker-pavilion"
+      "pavilion_image": "wicker-pavilion",
+      "pavilion__image": wicker
     },
     {
       "pavilion_id": 3,
@@ -24,7 +37,8 @@ export const LolPavilions = [
       "pavilion_capacity": 35,
       "pavilion_location": "South",
       "pavilion_schedule": "Weekdays",
-      "pavilion_image": "earlywine-pavilion"
+      "pavilion_image": "earlywine-pavilion",
+      "pavilion__image": earlywine
     },
     {
       "pavilion_id": 4,
@@ -33,7 +47,8 @@ export const LolPavilions = [
       "pavilion_capacity": 100,
       "pavilion_location": "South",
       "pavilion_schedule": "Weekends",
-      "pavilion_image": "rustic-pavilion"
+      "pavilion_image": "rustic-pavilion",
+      "pavilion__image": rustic
     },
     {
       "pavilion_id": 5,
@@ -42,7 +57,8 @@ export const LolPavilions = [
       "pavilion_capacity": 65,
       "pavilion_location": "South",
       "pavilion_schedule": "All Days",
-      "pavilion_image": "ranch-pavilion"
+      "pavilion_image": "ranch-pavilion",
+      "pavilion__image": ranch
     },
     {
       "pavilion_id": 6,
@@ -51,7 +67,8 @@ export const LolPavilions = [
       "pavilion_capacity": 9,
       "pavilion_location": "West",
       "pavilion_schedule": "Weekends",
-      "pavilion_image": "cedar-pavilion"
+      "pavilion_image": "cedar-pavilion",
+      "pavilion__image": cedar
     },
     {
       "pavilion_id": 7,
@@ -60,7 +77,8 @@ export const LolPavilions = [
       "pavilion_capacity": 30,
       "pavilion_location": "West",
       "pavilion_schedule": "Weekdays",
-      "pavilion_image": "valley-pavilion"
+      "pavilion_image": "valley-pavilion",
+      "pavilion__image": valley
     },
     {
       "pavilion_id": 8,
@@ -69,7 +87,8 @@ export const LolPavilions = [
       "pavilion_capacity": 18,
       "pavilion_location": "East",
       "pavilion_schedule": "All Days",
-      "pavilion_image": "lake-pavilion"
+      "pavilion_image": "lake-pavilion",
+      "pavilion__image": lake
     },
     {
       "pavilion_id": 9,
@@ -78,7 +97,8 @@ export const LolPavilions = [
       "pavilion_capacity": 18,
       "pavilion_location": "East",
       "pavilion_schedule": "Weekdays",
-      "pavilion_image": "hilltop-pavilion"
+      "pavilion_image": "hilltop-pavilion",
+      "pavilion__image": hilltop
     },
     {
       "pavilion_id": 10,
@@ -87,6 +107,7 @@ export const LolPavilions = [
       "pavilion_capacity": 56,
       "pavilion_location": "East ",
       "pavilion_schedule": "Weekdays",
-      "pavilion_image": "lion-pavilion"
+      "pavilion_image": "lion-pavilion",
+      "pavilion__image": lion
     }
    ]
