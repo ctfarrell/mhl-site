@@ -4,7 +4,7 @@ import Image from "next/image";
 import react, { useState, useRef } from 'react';
 import PavilionList from '/components/PavilionList'
 import {LolPavilions} from '/components/LolPavilions'
-
+import {HiSearch} from 'react-icons/hi'
 export default function Home() {
     const _pavilionList = LolPavilions
     //const pav_list = JSON.parse(sheet1)
@@ -38,7 +38,7 @@ export default function Home() {
                 </Link>
                 <h1 className="text-2xl text-gray-800">{new Date().toLocaleString() + ''}</h1>
             </div>
-            <span className="flex flex-none place-items-center h-2/5 w-screen md:h-screen object-contain bg-mountain-lake bg-cover bg-no-repeat">
+            <span className="flex flex-none place-items-center h-2/5 w-full md:h-screen object-contain bg-mountain-lake bg-cover bg-no-repeat mb-14">
                     <div className="flex flex-col mx-auto align-items-center bg-white bg-opacity-70">
                         <section className="flex justify-center pt-10 pb-2">
                             <Image src="/pavilion.png" alt="Icon" layout="responsive" height="738" width="800"/>
@@ -47,14 +47,29 @@ export default function Home() {
                             <h1 className="text-5xl font-bold text-center align-middle text-primary pb-10 px-10">PAVILIONS</h1>
                     </div>
             </span>
-            <span className="flex flex-row">
-                <h1 className="font-bold text-xl p-4">How many people are in your group?</h1>
-                <input ref={groupCapacity} type="text" className="border-2 rounded-md border-gray focus:border-4 m-2" id="groupCapacityInput"></input>
-                <button onClick={filterPavilionList} className="border-2 rounded-md border-gray hover:font-xl m-2 px-2">Filter</button>
-                <button onClick={clearFilter} className="border-2 border-gray rounded-md hover:font-xl m-2 px-2">Clear</button>
-            </span>
-            <PavilionList list_of_pavilions={pavilion_list}/>
-            <div className="flex-none h-1/3 w-screen bg-red-400 z-20">Future Footer</div>
+            <div className = "flex flex-col md:flex-row">
+                <div className = "flex flex-row flex-auto md:flex-col md:w-1/3 md:px-4">
+                    <h1 className = "text-3xl font-bold mx-auto">Pavilion Filter</h1>
+                    <div className = "flex flex-row pt-6">
+                        <HiSearch size="40" />
+                        <h1 className = "text-2xl">Pavilion Name</h1>
+                    </div>
+                    <div class="mb-6 py-4">
+                        <input type="text" id="base-input" class="py-2bg-gray-50 border border-gray-300 text-gray-900 sm:text-xl rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"/>
+                    </div>
+                    <span className="flex flex-row">
+                        <h1 className="font-bold text-xl p-4">How many people are in your group?</h1>
+                        <input ref={groupCapacity} type="text" className="border-2 rounded-md border-gray focus:border-4 m-2" id="groupCapacityInput"></input>
+                        <button onClick={filterPavilionList} className="border-2 rounded-md border-gray hover:font-xl m-2 px-2">Filter</button>
+                        <button onClick={clearFilter} className="border-2 border-gray rounded-md hover:font-xl m-2 px-2">Clear</button>
+                    </span>
+                </div>
+                <div className = "flex flex-col flex-auto width-screen md:width-2/3">
+                    <PavilionList list_of_pavilions={pavilion_list}/>
+                </div>
+            </div>
+            <div className="flex flex-none h-40 w-screen bg-primary z-20">
+            </div>
         </div>
     )
 }
