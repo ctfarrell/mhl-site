@@ -73,7 +73,7 @@ export default function Home() {
                     </div>
             </span>
             <div className = "flex flex-col md:flex-row">
-                <div className = "flex flex-row flex-auto md:flex-col md:w-1/3 md:px-4">
+                <div className = "flex flex-row flex-initial md:flex-col md:w-1/3 md:px-4">
                     <h1 className = "text-3xl font-bold mx-auto">Pavilion Filter</h1>
                     <div className = "flex flex-row pt-6">
                         <HiSearch size="40" />
@@ -106,7 +106,7 @@ export default function Home() {
                         <button onClick={clearFilter} className="border-2 border-gray rounded-md hover:font-xl m-2 px-2">Clear</button>
                     </span>
                 </div>
-                <div className = "flex flex-col flex-auto width-screen md:width-2/3">
+                <div className = "flex flex-col flex-initial width-screen md:width-2/3">
                     <PavilionList list_of_pavilions={pavilion_list}/>
                 </div>
             </div>
