@@ -5,11 +5,10 @@ import PavilionCard from '/components/PavilionCard'
 
 
 export default function PavilionList(props) {
-    //console.log(props.list_of_pavilions)
     return(
         props.list_of_pavilions.map(pav =>{
     return(
-        <PavilionCard className = "flex flex-col" 
+        <PavilionCard
         key={pav.pavilion_id} 
         pavilionCapacity = {pav.pavilion_capacity} 
         pavilionImage2 = {pav.pavilion__image} 

@@ -1,22 +1,47 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from "next/image";
-import react, { useState, useRef } from 'react';
+import react, { useState, useRef, useEffect } from 'react';
 import PavilionList from '/components/PavilionList'
+import LocationCheckboxes from '/components/LocationCheckboxes'
+import ScheduleCheckboxes from '/components/ScheduleCheckboxes'
 import {LolPavilions} from '/components/LolPavilions'
 import {HiSearch} from 'react-icons/hi'
+import {HiLocationMarker} from 'react-icons/hi'
+import {HiCalendar} from 'react-icons/hi'
+import {HiOutlineX} from 'react-icons/hi'
+
+
+
 export default function Home() {
     const _pavilionList = LolPavilions
-    //const pav_list = JSON.parse(sheet1)
+    const __pavilionLocations = new Set(LolPavilions.map(function(pavilion) {return(pavilion.pavilion_location)}))
+    const _pavilionLocations = Array.from(__pavilionLocations)
+    console.log(_pavilionLocations)
     const [pavilion_list, showPavilions] = useState(_pavilionList)
-    //[{"pavilion_id":1,"pavilion_name":"super pavilion","pavilion_text":"this pavilion is awesome"},{"pavilion_id":2,"pavilion_name":"super pavilion","pavilion_text":"this pavilion is awesome"}])
+    const [searchTerm, setSearchTerm] = useState("")
+    const handleSearchChange = event => {
+        setSearchTerm(event.target.value);
+    }
     const groupCapacity = useRef()
+    
+    function usePavilionListLocations(pavilion_list_locations){
+        return Array.from(new Set(pavilion_list_locations.map(function(pavilion) {return(pavilion.pavilion_location)})))
+    }
+    function usePavilionListSchedules(pavilion_list_schedules){
+        return Array.from(new Set(pavilion_list_schedules.map(function(pavilion) {return(pavilion.pavilion_schedule)})))
+    }
+
+    useEffect(() => {
+           showPavilions(_pavilionList.filter(pavi => pavi.pavilion_name.concat(pavi.pavilion_text).toLowerCase().includes(searchTerm.toLowerCase())))
+     }, [searchTerm]);
 
     function filterPavilionList(e) {
         const groupCapacityForFilter = parseInt(groupCapacity.current.value)
         console.log(typeof groupCapacityForFilter)
         const filteredPavilionList = _pavilionList.filter(pavilion => pavilion.pavilion_capacity >= groupCapacityForFilter)
         showPavilions(filteredPavilionList)
+        showLocations(location_list)
     }
 
     function clearFilter(e) {
@@ -52,10 +77,27 @@ export default function Home() {
                     <h1 className = "text-3xl font-bold mx-auto">Pavilion Filter</h1>
                     <div className = "flex flex-row pt-6">
                         <HiSearch size="40" />
-                        <h1 className = "text-2xl">Pavilion Name</h1>
+                        <h1 className = "pl-2 text-2xl">Pavilion Name</h1>
                     </div>
-                    <div class="mb-6 py-4">
-                        <input type="text" id="base-input" class="py-2bg-gray-50 border border-gray-300 text-gray-900 sm:text-xl rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"/>
+                    <div className="flex flex-none flex-row mb-6 py-4">
+                        <input type="text" id="base-input" value = {searchTerm} onChange = {handleSearchChange} className ="py-2 bg-gray-50 border-2 border-gray-300 text-gray-900 sm:text-xl rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"/>
+                        <button type="button" onClick={clearFilter} className="text-blue-700 bg-white border-2 border-gray-900 hover:bg-blue-700 font-medium rounded-lg text-sm sm:text-xl p-2.5 text-center inline-flex items-center ml-3">
+                            <HiOutlineX size="20" className = ""/>
+                        </button>
+                    </div>
+                    <div>
+                        <div className = "flex flex-row pt-6 pb-4">
+                            <HiLocationMarker size="40" />
+                            <h1 className = "pl-2 text-2xl">Locations</h1>
+                        </div>
+                        <LocationCheckboxes list_of_locations = {usePavilionListLocations(pavilion_list)} className = "pt-8" />
+                    </div>
+                    <div>
+                        <div className = "flex flex-row pt-6 pb-4">
+                            <HiCalendar size="40" />
+                            <h1 className = "pl-2 text-2xl">Schedule</h1>
+                        </div>
+                        <ScheduleCheckboxes list_of_schedules = {usePavilionListSchedules(pavilion_list)} className = "pt-8" />
                     </div>
                     <span className="flex flex-row">
                         <h1 className="font-bold text-xl p-4">How many people are in your group?</h1>

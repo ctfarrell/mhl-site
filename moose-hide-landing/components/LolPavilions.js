@@ -105,7 +105,7 @@ export const LolPavilions = [
       "pavilion_name": "Lion Pavilion",
       "pavilion_text": "It's a good place with picnic tables, two charcoal grills, and restrooms. It's a good pavilion for children to play and family to stay. ",
       "pavilion_capacity": 56,
-      "pavilion_location": "East ",
+      "pavilion_location": "East",
       "pavilion_schedule": "Weekdays",
       "pavilion_image": "lion-pavilion",
       "pavilion__image": lion
