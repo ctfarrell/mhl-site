@@ -10,7 +10,7 @@ function pavilionCount(lop) {
             "pavilion_id": 999,
             "pavilion_name": "No Results",
             "pavilion_text": "We're really sorry about this, but your search didn't return any results. I think we're going to need to build more pavilions in Moose Hide Landing",
-            "pavilion_capacity": 9999999999,
+            "pavilion_capacity": 0,
             "pavilion_location": "Nowhere",
             "pavilion_schedule": "Never",
             "pavilion_image": "hilltop-pavilion",

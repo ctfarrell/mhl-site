@@ -86,7 +86,7 @@ export default function Home() {
                     </div>
             </span>
             <div className = "flex flex-col md:flex-row">
-                <div className = "flex flex-row flex-none md:flex-col md:w-1/3 md:px-4">
+                <div className = "flex flex-row flex-none md:flex-col md:w-1/4 md:px-4">
                     <h1 className = "text-3xl font-bold mx-auto">Pavilion Filter</h1>
                     <div className = "flex flex-row pt-6">
                         <HiSearch size="40" />
