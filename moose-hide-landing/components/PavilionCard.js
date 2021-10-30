@@ -3,7 +3,6 @@ import Link from 'next/link';
 import {BsPeopleFill} from 'react-icons/bs'
 import {HiLocationMarker} from 'react-icons/hi'
 import {HiCalendar} from 'react-icons/hi'
-import cedarPavilion from '../public/pavilion-images/cedar-pavilion.png';
 
 
 
@@ -34,7 +33,7 @@ export default function PavilionCard(props) {
             </Link>
         </div>
         <div className = "flex w-full justify-between space-x-10 h-80 flex-row">
-            <div className = "flex flex-col w-2/5 justify-between">
+            <div className = "flex flex-col w-1/2 justify-between">
                 <p className="pl-10 wrap text-2xl text-left justify-self-left w-full p-8">{props.pavilionText}</p>
                 <div className="flex flex-row pl-10 pb-8">
                     <HiLocationMarker className = "flex-none" size="40"/>
