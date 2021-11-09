@@ -2,22 +2,24 @@ import { AppProps } from 'next/app'
 import '../styles/globals.css'
 import { Web3ReactProvider, createWeb3ReactRoot } from '@web3-react/core'
 import { ethers } from "ethers";
-import Web3 from "web3";
-import Web3Modal from "web3modal";
+//import Web3 from "web3";
+//import Web3Modal from "web3modal";
 
-const providerOptions = {
+//const providerOptions = {
   /* See Provider Options Section */
-};
+//};
 
+/*
 const web3Modal = new Web3Modal({
   network: "mainnet", // optional
   cacheProvider: true, // optional
   providerOptions // required
 });
+*/
 
-const provider = await web3Modal.connect();
+//const provider = await web3Modal.connect();
 
-const web3 = new Web3(provider);
+//const web3 = new Web3(provider);
 // A Web3Provider wraps a standard Web3 provider, which is
 // what MetaMask injects as window.ethereum into each page
 //const provider = new ethers.providers.Web3Provider(window.ethereum)
