@@ -27,11 +27,11 @@ export default function HuntingPage() {
                     <div className = "flex flex-none h-full w-1/3 bg-secondary">
                         <Image src = {wolf.src} layout = 'intrinsic' width = {wolf.width} height = {wolf.height} />
                     </div>
-                    <div className = "flex flex-none flex-col bg-primary w-1/2 h-full place-content-end">
+                    <div className = "flex flex-col bg-primary w-2/3 h-full place-content-end">
                         <h1 className = "text-white text-5xl font-bold pl-14 pb-4">Moose Hide Landing</h1>
                         <h1 className = "text-white text-5xl font-bold pl-14 pb-20">Hunting License Pilot Program</h1>
                     </div>
-                    <div className = "bg-primary flex flex-col place-content-end w-1/6 h-full">
+                    <div className = "bg-secondary flex flex-initial w-1/4 flex-col place-content-end h-full">
                         <div className = "w-2/3 mx-auto my-14">
                             <Image src = {cpr.src} layout = 'intrinsic' width = {cpr.width} height = {cpr.height} />
                         </div>

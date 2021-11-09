@@ -33,6 +33,8 @@ const web3Modal = new Web3Modal({
 //  return new Web3Provider(provider) // this will vary according to whether you use e.g. ethers or web3.js
 //}
 
+
+/*
 interface Web3ReactContextInterface<T = any> {
   activate: (
     connector: AbstractConnectorInterface,
@@ -50,7 +52,7 @@ interface Web3ReactContextInterface<T = any> {
   active: boolean
   error?: Error
 }
-
+*/
 //const Web3ReactProviderReloaded = createWeb3ReactRoot('anotherOne')
 
 //getLibrary: (provider?: any, connector?: AbstractConnectorInterface) => any
