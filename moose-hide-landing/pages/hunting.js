@@ -1,8 +1,14 @@
-import Head from 'next/head'
+import Head from "next/head";
 import Link from 'next/link'
 import Image from "next/image";
+import HuntingModal from '/components/HuntingModal'
+import wolf from '../public/wolf.webp';
+import aelk from '../public/1elk.jpg';
+import hunter from '../public/hunter.webp';
+import cpr from '../public/cpr.png';
 
-export default function Hunting() {
+
+export default function HuntingPage() {
     return (
         <div className="flex-col flex-1 justify-left content-left">
             <Head>
@@ -16,34 +22,40 @@ export default function Hunting() {
                 </Link>
                 <h1 className="text-2xl text-gray-800">{new Date().toLocaleString() + ''}</h1>
             </div>
-            <div className = "flex flex-none flex-row h-screen w-screen">
-                <div className = "flex bg-red-800 w-1/4 h-1/2">
-                    Fox Image
-
-
-
-
-
-                    help
+            <div className = "flex flex-none flex-col h-screen w-screen">
+                <div className = "flex flex-none flex-row h-1/2 w-screen">
+                    <div className = "flex flex-none h-full w-1/3 bg-secondary">
+                        <Image src = {wolf.src} layout = 'intrinsic' width = {wolf.width} height = {wolf.height} />
+                    </div>
+                    <div className = "flex flex-none flex-col bg-primary w-1/2 h-full place-content-end">
+                        <h1 className = "text-white text-5xl font-bold pl-14 pb-4">Moose Hide Landing</h1>
+                        <h1 className = "text-white text-5xl font-bold pl-14 pb-20">Hunting License Pilot Program</h1>
+                    </div>
+                    <div className = "bg-primary flex flex-col place-content-end w-1/6 h-full">
+                        <div className = "w-2/3 mx-auto my-14">
+                            <Image src = {cpr.src} layout = 'intrinsic' width = {cpr.width} height = {cpr.height} />
+                        </div>
+                    </div>
                 </div>
-                <div className = "flex bg-primary w-3/4 h-1/2 text-center justify-items-center">
-                    Moose Hide Landing
-                    is now in Colorado!
-                </div>
-            </div>
-            <div className = "flex w-screen h-1/2 bg-blue-300">
-                <div className = "flex bg-purple-800 w-1/4 h-1/2">
-                    Elk Photo
-                </div>
-                <div className = "flex bg-black w-2/3 h-1/2">
-                    <button className = "flex bg-primary">
-                        Learn More
-                    </button>
-                </div>
-                <div>
-                    Hunter Photo
+                <div className = "flex w-screen h-1/2 bg-blue-300">
+                    <div className = "flex flex-none h-full w-1/3 bg-secondary">
+                        <Image src = {aelk.src} layout = 'intrinsic' width = {aelk.width} height = {aelk.height} />
+                    </div>
+                    <div className = "flex flex-col bg-black w-2/3 h-full place-items-start bg-secondary">
+                        <p className = "flex flex-initial text-left text-3xl pl-14 pt-20 wrap w-4/5" >Colorado is the only state that allows landowners to sell/transfer their state issued landowner hunting tags to third party individuals. 
+                        </p>
+                            <div id="modal-root"></div>
+                    </div>
+                    <div className = "flex flex-initial w-1/4 h-full bg-secondary">
+                        <Image src = {hunter.src} layout = 'intrinsic' width = {hunter.width} height = {hunter.height} />
+                    </div>
                 </div>
             </div>
         </div>
-    )
-}
+        //</body>
+      //</Html>
+    );
+  }
+//}
+
+//export default MainDocument;

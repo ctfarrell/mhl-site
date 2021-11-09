@@ -5,6 +5,6 @@ module.exports = {
     domains: ['localhost','res.cloudinary.com'],
   },
   scripts: {
-    domains:["www.form.jotform.com"],
+    domains:["www.form.jotform.com","www.w3.org"],
   },
 }

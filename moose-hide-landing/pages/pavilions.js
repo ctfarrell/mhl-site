@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from "next/image";
-import react, { useState, useRef, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import PavilionList from '/components/PavilionList'
 import LocationCheckboxes from '/components/LocationCheckboxes'
 import ScheduleCheckboxes from '/components/ScheduleCheckboxes'
@@ -19,7 +19,6 @@ export default function Home() {
     const _pavilionList = LolPavilions
     const __pavilionLocations = new Set(LolPavilions.map(function(pavilion) {return(pavilion.pavilion_location)}))
     const _pavilionLocations = Array.from(__pavilionLocations)
-    console.log(_pavilionLocations)
     const [pavilion_list, showPavilions] = useState(_pavilionList)
     const [searchTerm, setSearchTerm] = useState("")
     const [groupCapacity, setGroupCapacity] = useState(0)
@@ -29,10 +28,6 @@ export default function Home() {
     const handleCapacityFilter = event => {
         setGroupCapacity(event.target.value);
     }
-
-    
-    //const groupCapacity = useRef()
-    
     function usePavilionListLocations(pavilion_list_locations){
         return Array.from(new Set(pavilion_list_locations.map(function(pavilion) {return(pavilion.pavilion_location)})))
     }
@@ -41,28 +36,19 @@ export default function Home() {
     }
 
     useEffect(() => {
-           showPavilions(_pavilionList.filter(pavi => pavi.pavilion_name.concat(pavi.pavilion_text).toLowerCase().includes(searchTerm.toLowerCase())))
-     }, [searchTerm]);
+        showPavilions(_pavilionList.filter(pavi => pavi.pavilion_name.concat(pavi.pavilion_text).toLowerCase().includes(searchTerm.toLowerCase())))
+        }, [searchTerm, _pavilionList]);
 
     useEffect(() => {
         showPavilions(_pavilionList.filter(pavilion => pavilion.pavilion_capacity >= groupCapacity))
-    },[groupCapacity]);
-    /*
-    function filterPavilionList(e) {
-        const groupCapacityForFilter = parseInt(groupCapacity.current.value)
-        console.log(typeof groupCapacityForFilter)
-        const filteredPavilionList = _pavilionList.filter(pavilion => pavilion.pavilion_capacity >= groupCapacityForFilter)
-        showPavilions(filteredPavilionList)
-        showLocations(location_list)
-    }
-*/
+        },[groupCapacity,_pavilionList]);
+
     function clearFilter(e) {
         setGroupCapacity(0)
         setSearchTerm("")
         showPavilions(_pavilionList)
     }
 
-    //console.log(pavilion_list)
     return (
         <div className="flex-col flex-1 justify-left content-left">
             <Head>

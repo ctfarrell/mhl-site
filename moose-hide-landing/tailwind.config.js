@@ -7,11 +7,13 @@ module.exports = {
   theme: {
     borderColor: {
       primary: '#3a7356',
+      secondary: '#f4eeed',
       white: colors.white,
       red: colors.red,
     },
     colors: {
       primary: '#3a7356',
+      secondary: '#f4eeed',
       white: colors.white,
       red: colors.red,
     },

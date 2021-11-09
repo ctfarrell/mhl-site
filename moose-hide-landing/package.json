@@ -11,15 +11,20 @@
   "dependencies": {
     "@cloudinary/react": "^1.0.0-beta.11",
     "@cloudinary/url-gen": "^1.0.0",
+    "@web3-react/core": "^6.1.9",
     "babel": "^6.23.0",
+    "ethers": "^5.5.1",
     "next": "11.1.2",
     "react": "17.0.2",
     "react-calendar": "^3.4.0",
     "react-dom": "17.0.2",
     "react-icons": "^4.2.0",
-    "react-jotform-embed": "^1.1.2"
+    "react-jotform-embed": "^1.1.2",
+    "web3modal": "^1.9.4"
   },
   "devDependencies": {
+    "@types/node": "^16.11.7",
+    "@types/react": "^17.0.34",
     "autoprefixer": "^10.3.4",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",
@@ -27,6 +32,7 @@
     "json-loader": "^0.5.7",
     "npm": "^8.1.0",
     "postcss": "^8.3.6",
-    "tailwindcss": "^2.2.15"
+    "tailwindcss": "^2.2.15",
+    "typescript": "^4.4.4"
   }
 }
