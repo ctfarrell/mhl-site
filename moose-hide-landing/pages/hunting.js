@@ -22,15 +22,16 @@ export default function HuntingPage() {
         completed: false,
       }
     //const fetcher = (...args) => fetch(...args).then(res => res.json())
-    function createCitizen (id) {
+    /*function createCitizen (id) {
         const { data, error } = useSWR(``, db_api.create(myCitizen))
-      
+
         return {
           user: data,
           isLoading: !error && !data,
           isError: error
         }
       }
+*/
     // Make API request to create new todo
     db_api.create(myCitizen).then((response) => {
         console.log(response)})

@@ -1,6 +1,6 @@
 import { AppProps } from 'next/app'
 import '../styles/globals.css'
-import NavBar from '/components/NavBar.js'
+import NavBar from '../components/NavBar.js'
 import { Web3ReactProvider, createWeb3ReactRoot } from '@web3-react/core'
 import { ethers } from "ethers";
 //import Web3 from "web3";

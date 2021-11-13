@@ -17,7 +17,7 @@
     "👇 ABOUT-prebuild-command": "💡 before 'build' runs, run the 'bootstrap' command #",
     "prebuild": "echo 'setup faunaDB' && npm run bootstrap",
     "👇 ABOUT-build-command": "💡 build the react app and the serverless functions #",
-    "build:app": "react-scripts build",
+    "build:app": "next build",
     "build:functions": "netlify-lambda build functions"
   },
   "dependencies": {
