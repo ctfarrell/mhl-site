@@ -6,22 +6,44 @@ import wolf from '../public/wolf.webp';
 import aelk from '../public/1elk.jpg';
 import hunter from '../public/hunter.webp';
 import cpr from '../public/cpr.png';
+import db_api from '../utils/db_api.js'
+import useSWR from "swr";
 
+export async function getServerSideProps(context) {
+    return {
+      props: {}, // will be passed to the page component as props
+    }
+  }
 
 export default function HuntingPage() {
-    return (
+    
+    const myCitizen = {
+        title: 'My todo title',
+        completed: false,
+      }
+    //const fetcher = (...args) => fetch(...args).then(res => res.json())
+    function createCitizen (id) {
+        const { data, error } = useSWR(``, db_api.create(myCitizen))
+      
+        return {
+          user: data,
+          isLoading: !error && !data,
+          isError: error
+        }
+      }
+    // Make API request to create new todo
+    db_api.create(myCitizen).then((response) => {
+        console.log(response)})
+    
+    //createCitizen()
+
+        return (
         <div className="flex-col flex-1 justify-left content-left">
             <Head>
             <title>Moose Hide Landing Rec</title>
             <meta name="Your one stop shop for all your city recreation needs!" content="Moose Hide Landing Parks and Recreation" />
             <link rel="icon" href="/favicon.ico"/>
             </Head>
-            <div className="fixed w-screen flex flex-row border-b-2 justify-between border-gray-800 bg-white bg-opacity-100 z-50 shadow-sm">
-                <Link href='/' passHref>
-                    <h1 className="text-2xl text-gray-800 cursor-pointer">MOOSE HIDE LANDING TOWN WEBSITE</h1>
-                </Link>
-                <h1 className="text-2xl text-gray-800">{new Date().toLocaleString() + ''}</h1>
-            </div>
             <div className = "flex flex-none flex-col h-screen w-screen">
                 <div className = "flex flex-none flex-row h-1/2 w-screen">
                     <div className = "flex flex-none h-full w-1/3 bg-secondary">
@@ -44,7 +66,8 @@ export default function HuntingPage() {
                     <div className = "flex flex-col bg-black w-2/3 h-full place-items-start bg-secondary">
                         <p className = "flex flex-initial text-left text-3xl pl-14 pt-20 wrap w-4/5" >Colorado is the only state that allows landowners to sell/transfer their state issued landowner hunting tags to third party individuals. 
                         </p>
-                            <div id="modal-root"></div>
+                        <button
+                            className="bg-red-300 w-30 h-8 my-8 p-2 border-red-800 border-2 mx-auto my-auto">create citizen</button>
                     </div>
                     <div className = "flex flex-initial w-1/4 h-full bg-secondary">
                         <Image src = {hunter.src} layout = 'intrinsic' width = {hunter.width} height = {hunter.height} />

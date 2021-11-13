@@ -1,9 +1,13 @@
 import { AppProps } from 'next/app'
 import '../styles/globals.css'
+import NavBar from '/components/NavBar.js'
 import { Web3ReactProvider, createWeb3ReactRoot } from '@web3-react/core'
 import { ethers } from "ethers";
 //import Web3 from "web3";
 //import Web3Modal from "web3modal";
+// Function using fetch to POST to our API endpoint
+
+
 
 //const providerOptions = {
   /* See Provider Options Section */
@@ -58,7 +62,13 @@ interface Web3ReactContextInterface<T = any> {
 //getLibrary: (provider?: any, connector?: AbstractConnectorInterface) => any
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <div>
+      <NavBar />
+      <Component {...pageProps} />
+    </div>
+
+  )
     //<Web3ReactProvider getLibrary={getLibrary}>
     //  {/* <...> */}
     //</Web3ReactProvider>
