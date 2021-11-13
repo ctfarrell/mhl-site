@@ -18,7 +18,7 @@
     "prebuild": "echo 'setup faunaDB' && npm run bootstrap",
     "👇 ABOUT-build-command": "💡 build the react app and the serverless functions #",
     "build:app": "next build",
-    "build:functions": "netlify-lambda build functions"
+    //"build:functions": "netlify-lambda build functions"
   },
   "dependencies": {
     "@cloudinary/react": "^1.0.0-beta.11",
