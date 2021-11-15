@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm-run-all --parallel build:**",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "bootstrap": "node ./scripts/bootstrap-fauna-database.js",
@@ -14,11 +14,9 @@
     "start:app": "next dev",
     "start:server": "netlify-lambda serve api/.netlify/functions ",
     "👇 ABOUT-prebuild-command": "💡 before 'build' runs, run the 'bootstrap' command #",
-    "prebuild": "echo 'setup faunaDB' && npm run bootstrap",
     "👇 ABOUT-build-command": "💡 build the react app and the serverless functions #",
-    "build:app": "next build",
-    "build:server": "netlify-lambda build functions"
-  },
+    "build:app": "next build"
+    },
   "dependencies": {
     "@cloudinary/react": "^1.0.0-beta.11",
     "@cloudinary/url-gen": "^1.0.0",

@@ -1,5 +1,5 @@
 import { useForm } from 'react-hook-form';
-import mhl_citizens from '/utils/mhl-citizens.js'
+import mhl_citizens from '../utils/mhl-citizens.js'
 
 
 export default function HecForm() {
