@@ -93,16 +93,18 @@ export default function Home() {
                             <h1 className="italic group-hover:font-bold text-white text-xl text-center pt-8">License Management</h1>
                             <h1 className="text-white text-xl text-center">Get your own Hunting, Boating, and Fishing Licenses</h1>
                         </div>
-                    </Link>        
-                    <div className="flex flex-col flex-none h-80 w-80 mx-auto place-items-center cursor-pointer place-self-auto group p-3">
-                        <div className="flex-none rounded-full h-1/2 w-1/2 bg-white ">
-                            <div className="object-contain place-items-center align-center p-4">
-                                <Image src={garbage} alt="Icon" layout="responsive"/>
+                    </Link>
+                    <Link href='/cardControl' passHref>
+                        <div className="flex flex-col flex-none h-80 w-80 mx-auto place-items-center cursor-pointer place-self-auto group p-3">
+                            <div className="flex-none rounded-full h-1/2 w-1/2 bg-white ">
+                                <div className="object-contain place-items-center align-center p-4">
+                                    <Image src={garbage} alt="Icon" layout="responsive"/>
+                                </div>
                             </div>
+                            <h1 className="italic group-hover:font-bold text-white text-xl text-center pt-8">Garbage Management</h1>
+                            <h1 className="text-white text-xl text-center">Learn how to recycle in Moose Hide Landing</h1>
                         </div>
-                        <h1 className="italic group-hover:font-bold text-white text-xl text-center pt-8">Garbage Management</h1>
-                        <h1 className="text-white text-xl text-center">Learn how to recycle in Moose Hide Landing</h1>
-                    </div>
+                    </Link>
                 </div>
             </span>
             <span className="flex-none w-screen h-2/5 md:h-screen bg-primary z-20">

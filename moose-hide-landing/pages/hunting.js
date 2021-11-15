@@ -6,21 +6,25 @@ import wolf from '../public/wolf.webp';
 import aelk from '../public/1elk.jpg';
 import hunter from '../public/hunter.webp';
 import cpr from '../public/cpr.png';
-import db_api from '../utils/db_api.js'
+import db_api from './api/db_api.js'
+import absoluteUrl from "next-absolute-url";
 import useSWR from "swr";
+import mhl_citizens from '/utils/mhl-citizens.js'
 
-export async function getServerSideProps(context) {
-    return {
-      props: {}, // will be passed to the page component as props
-    }
-  }
+
 
 export default function HuntingPage() {
     
-    const myCitizen = {
-        title: 'My todo title',
-        completed: false,
-      }
+    function createCitizen(e) {
+        mhl_citizens.createCard("123457","lol","ididit")
+    }
+
+    function getDoc(e) {
+        mhl_citizens.getCitizenById("12345")
+    }
+    function getCitizenCount(e) {
+        mhl_citizens.getAllCitizens()
+    }
     //const fetcher = (...args) => fetch(...args).then(res => res.json())
     /*function createCitizen (id) {
         const { data, error } = useSWR(``, db_api.create(myCitizen))
@@ -31,11 +35,14 @@ export default function HuntingPage() {
           isError: error
         }
       }
-*/
+
     // Make API request to create new todo
-    db_api.create(myCitizen).then((response) => {
-        console.log(response)})
-    
+    const createCitizen = async () => {
+        const response = await fetch("/api/example", config);
+        const data = response.json();
+   }
+
+    */
     //createCitizen()
 
         return (
@@ -68,7 +75,17 @@ export default function HuntingPage() {
                         <p className = "flex flex-initial text-left text-3xl pl-14 pt-20 wrap w-4/5" >Colorado is the only state that allows landowners to sell/transfer their state issued landowner hunting tags to third party individuals. 
                         </p>
                         <button
-                            className="bg-red-300 w-30 h-8 my-8 p-2 border-red-800 border-2 mx-auto my-auto">create citizen</button>
+                            className="bg-red-300 w-30 h-8 my-8 p-2 border-red-800 border-2 mx-auto my-auto"
+                            onClick = {createCitizen}>create citizen
+                        </button>
+                        <button
+                            className="bg-red-300 w-30 h-8 my-8 p-2 border-red-800 border-2 mx-auto my-auto"
+                            onClick = {getDoc}>link wallet
+                        </button>
+                        <button
+                            className="bg-red-300 w-30 h-8 my-8 p-2 border-red-800 border-2 mx-auto my-auto"
+                            onClick = {getCitizenCount}>count citizens
+                        </button>
                     </div>
                     <div className = "flex flex-initial w-1/4 h-full bg-secondary">
                         <Image src = {hunter.src} layout = 'intrinsic' width = {hunter.width} height = {hunter.height} />

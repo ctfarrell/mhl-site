@@ -43,7 +43,7 @@ export default function PavilionCard(props) {
                 </div>
             </div>
             <div className = "container flex-none object-contain justify-self-right h-2/3 w-1/3 block z-10">
-                <Image src ={props.pavilionImage2.src} layout = "responsive" height={props.pavilionImage2.height} width = {props.pavilionImage2.width} className="object-fill z-10" />
+                <Image src ={props.pavilionImage2.src} alt="pavilion image" layout = "responsive" height={props.pavilionImage2.height} width = {props.pavilionImage2.width} className="object-fill z-10" />
             </div>
         </div>
     </div>

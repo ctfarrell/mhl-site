@@ -7,10 +7,10 @@ const app = next({ dev })
 const handle = app.getRequestHandler()
 
 const apiPaths = {
-    '/.netlify/functions': {
+    '/api/.netlify/functions': {
         target: 'http://localhost:9000', 
         pathRewrite: {
-            '/.netlify/functions': '/.netlify/functions'
+            '/api/.netlify/functions': '/api/netlify/functions'
         },
         changeOrigin: true
     }
