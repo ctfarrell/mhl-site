@@ -69,9 +69,6 @@ function MyApp({ Component, pageProps }: AppProps) {
     </div>
 
   )
-    //<Web3ReactProvider getLibrary={getLibrary}>
-    //  {/* <...> */}
-    //</Web3ReactProvider>
 }
 export default MyApp
 

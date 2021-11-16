@@ -16,10 +16,11 @@
     "👇 ABOUT-prebuild-command": "💡 before 'build' runs, run the 'bootstrap' command #",
     "👇 ABOUT-build-command": "💡 build the react app and the serverless functions #",
     "build:app": "next build"
-    },
+  },
   "dependencies": {
     "@cloudinary/react": "^1.0.0-beta.11",
     "@cloudinary/url-gen": "^1.0.0",
+    "@walletconnect/web3-provider": "^1.6.6",
     "@web3-react/core": "^6.1.9",
     "babel": "^6.23.0",
     "cors": "^2.8.5",

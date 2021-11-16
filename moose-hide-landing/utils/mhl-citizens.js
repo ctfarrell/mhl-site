@@ -2,7 +2,7 @@ import Cors from 'cors'
 
 // Initializing the cors middleware
 const cors = Cors({
-  methods: ['GET', 'HEAD'],
+  methods: ['GET','POST','HEAD'],
 })
 
 // Helper method to wait for a middleware to execute before continuing
@@ -52,7 +52,6 @@ function createCard(_id, _firstName, _lastName,_email,_tokenId)
      }
     )
 )
-
 }
 
 
@@ -65,17 +64,54 @@ function createCard(_id, _firstName, _lastName,_email,_tokenId)
 function getCitizenById(_id, _firstName, _lastName) {
     let docWithId = client.query(q.Get(
     q.Match("ID", _id)))
-    console.log(docWithId)
+    return docWithId
 }
+
+function getCitizenByAddress1(_address) {
+  const docWithAddress = client.query(q.Get(
+      q.Match("address", _address)))
+      return docWithAddress
+  }
 
 function getCitizenByAddress(_address) {
-    let docWithAddress = client.query(q.Get(
-        q.Match("address", _id)))
-        console.log(docWithId)
+    client.query(q.Get(
+        q.Match("address", _address)))
+        .then(result=>{
+          return(result)
+        })
+        .catch(error=>console.log("this is the error log",error))
 }
 
-function updateCitizenById (_id) {
+function updateCitizenByRef (ref,_address,_firstName,_lastName,_email) {
+  {client.query(
+    q.Update(q.Ref(
+      q.Collection('mhl-citizens'),ref),
+      { data: {firstName: _firstName,
+        lastName: _lastName,
+        email: _email,
+        address: _address,
+        walletLinked: true}
+     }
+    )
+)
+}
+}
 
+function citizenSelfCreate(_id, _firstName, _lastName,_email,_address) 
+  {client.query(
+    q.Create(
+      q.Collection('mhl-citizens'),
+      { data: {citizenId: _id,
+        firstName: _firstName,
+        lastName: _lastName,
+        email: _email,
+        address: _address,
+        classCompleted: false,
+        walletLinked: true,
+        tokenClaimed: false}
+     }
+    )
+)
 }
 
 
@@ -104,6 +140,9 @@ export default {
     //create: createCardHandler,
     createCard: createCard,
     getCitizenByAddress: getCitizenByAddress,
+    getCitizenByAddress1: getCitizenByAddress1,
     getCitizenById: getCitizenById,
-    getAllCitizens: getAllCitizens
+    getAllCitizens: getAllCitizens,
+    updateCitizenByRef: updateCitizenByRef,
+    citizenSelfCreate: citizenSelfCreate
   }
