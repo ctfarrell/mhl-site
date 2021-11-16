@@ -8,9 +8,6 @@ import cpr from '../public/cpr.png';
 import absoluteUrl from "next-absolute-url";
 import useSWR from "swr";
 import mhl_citizens from '/utils/mhl-citizens.js'
-import Web3 from "web3";
-import Web3Modal from "web3modal";
-import WalletConnectProvider from "@walletconnect/web3-provider";
 import { useState, useEffect } from 'react';
 import HunterFlow from "../components/HunterFlow";
 
