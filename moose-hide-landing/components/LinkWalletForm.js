@@ -16,6 +16,7 @@ export default function LinkWalletForm(props) {
     } catch (err) {console.debug("failed user validation",err)}
     if(userValidationData.existence){
       try{
+        console.log(userValidationData.ref)
         var updatedUserData = await updateExistingUser(userValidationData.ref,_FirstName,_LastName, _Email, _Address)
         console.debug(updatedUserData)
         props.updateWalletState(true)
@@ -36,8 +37,9 @@ export default function LinkWalletForm(props) {
       console.log("before Id check")
       const userDoc = await mhl_citizens.getCitizenById(_id)
       console.log("after Id Check",userDoc)
+      console.log(userDoc.ref.value.id)
       return ({existence: true,
-              ref:userDoc.ref.value
+              ref:userDoc.ref.value.id
       })
     } catch (err) {console.log(err); return({existence: false, error: err})
   }
