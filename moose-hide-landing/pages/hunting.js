@@ -14,36 +14,6 @@ import HunterFlow from "../components/HunterFlow";
 
 
 export default function HuntingPage() {
-    useEffect(() => {
-        // window is accessible here.
-        if (typeof window.ethereum !== 'undefined') {
-            console.log('MetaMask is installed!');
-          }
-                }, []);
-    function connectWallet(){
-        ethereum.request({ method: 'eth_requestAccounts' });
-    }
-
-    function createCitizen(e) {
-        mhl_citizens.createCard("123457","lol","ididit")
-    }
-
-    function getDoc(e) {
-        mhl_citizens.getCitizenById("12345")
-    }
-    function getCitizenCount(e) {
-        mhl_citizens.getAllCitizens()
-    }
-    const providerOptions = {
-        walletconnect: {
-            package: WalletConnectProvider, // required
-            options: {
-              infuraId: "ea6f9231bd6f4dfbb3a263e281865f31" // required
-            }
-          }    
-        };
-          
-
         return (
         <div className="flex-col flex-1 justify-left content-left">
             <Head>
@@ -74,7 +44,7 @@ export default function HuntingPage() {
                         <p className = "flex flex-initial text-left text-3xl pl-14 pt-20 wrap w-4/5" >Colorado is the only state that allows landowners to sell/transfer their state issued landowner hunting tags to third party individuals. 
                         </p>
                         <button
-                            className="bg-secondary w-30 h-8 my-8 p-2 2 mx-auto my-auto"
+                            className="bg-primary w-30 h-8 my-8 p-2 2 mx-auto my-auto"
                             >Learn More...
                         </button>
                     </div>
@@ -87,10 +57,5 @@ export default function HuntingPage() {
                         <HunterFlow/>
             </div>
         </div>
-        //</body>
-      //</Html>
     );
-  }
-//}
-
-//export default MainDocument;
+}
