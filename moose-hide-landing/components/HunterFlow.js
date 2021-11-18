@@ -2,6 +2,8 @@ import mhl_citizens from '../utils/mhl-citizens.js'
 import LinkWalletForm from './LinkWalletForm.js'
 import { useState, useEffect } from 'react';
 import HunterEducationCard from './HunterEducationCard.js';
+import { HiArrowRight } from "react-icons/hi";
+import {HiCheck} from 'react-icons/hi'
 
 export default function HunterFlow() {
     const [linkedWalletState, updateWalletState] = useState(false)
@@ -51,14 +53,43 @@ export default function HunterFlow() {
          }
     }
 
+
     return (
-        <div 
-        className = "flex flex-col w-screen bg-primary">
-            <button
-                className="my-10 py-2 bg-gray-50 border-2 border-primary bg-secondary text-gray-900 sm:text-xl rounded-lg focus:ring-blue-500 focus:border-blue-500 mx-auto block w-1/5 p-2.5"
-                onClick = {accountExists}
-                >Connect Wallet
-            </button>
+        <div className = "flex flex-col w-screen bg-primary">
+            <span className="flex flex-initial flex-col w-full h-1/2 z-20">
+                    <h1 className="text-5xl text-white text-center mx-auto pt-10">HUNTER REGISTRATION</h1>
+                <div className="flex flex-row self-center justify-items-center align-items-center space-x-10 mt-10">
+                    <div className="flex flex-col flex-none h-80 w-80 mx-auto place-items-center cursor-pointer place-self-auto group p-3">
+                        <div className="flex flex-none rounded-full h-1/3 w-1/3 bg-white ">
+                            {linkedWalletState? <HiCheck className = "flex mx-auto my-auto place-items-center align-center" size="50"/>:<p></p>}
+                        </div>
+                        <h1 className="group-hover:font-bold text-white text-3xl font-bold text-center pt-8">Register</h1>
+                        <button className="my-10 py-2 bg-gray-50 border-2 border-primary bg-secondary text-gray-900 sm:text-xl rounded-lg focus:ring-blue-500 focus:border-blue-500 mx-auto block w-full p-2.5"
+                                onClick = {accountExists} >Connect Wallet
+                        </button>
+                    </div>
+                    <HiArrowRight className = "my-top h-35 mt-8" color="white" size="60"/>
+                    <div className="flex flex-col flex-none h-80 w-80 mx-auto place-items-center cursor-pointer place-self-auto group p-3">
+                        <div className="flex flex-none rounded-full h-1/3 w-1/3 bg-white ">
+                            {classCompleted? <HiCheck className = "flex mx-auto my-auto place-items-center align-center" size="50"/>:<p/>}
+                        </div>
+                        <h1 className="group-hover:font-bold text-white text-3xl font-bold text-center pt-8">Complete the Class</h1>
+                        <button className="my-10 py-2 bg-gray-50 border-2 border-primary bg-secondary text-gray-900 sm:text-xl rounded-lg focus:ring-blue-500 focus:border-blue-500 mx-auto block w-full p-2.5"
+                                >Schedule Class
+                        </button>
+                    </div>
+                    <HiArrowRight className = "my-top h-35 mt-8" color="white" size="60"/>
+                    <div className="flex flex-col flex-none h-80 w-80 mx-auto place-items-center cursor-pointer place-self-auto group p-3">
+                        <div className="flex flex-none rounded-full h-1/3 w-1/3 bg-white ">
+                            {hecClaimed? <HiCheck className = "flex mx-auto my-auto place-items-center align-center" size="50"/>:<p/>}
+                        </div>
+                        <h1 className="group-hover:font-bold text-white text-3xl font-bold text-center pt-8">Claim your Card</h1>
+                        <button className="my-10 py-2 bg-gray-50 border-2 border-primary bg-secondary text-gray-900 sm:text-xl rounded-lg focus:ring-blue-500 focus:border-blue-500 mx-auto block w-full p-2.5"
+                                >Mint Token
+                        </button>
+                    </div>
+                </div>
+            </span>
             <div className = "flex flex-col">
                 {linkedWalletState?
                     <p className = "text-white text-3xl mx-auto">

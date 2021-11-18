@@ -4,12 +4,14 @@ import Image from "next/image";
 import wolf from '../public/wolf.webp';
 import aelk from '../public/1elk.jpg';
 import hunter from '../public/hunter.webp';
+import elk from '../public/elk.webp';
 import cpr from '../public/cpr.png';
 import absoluteUrl from "next-absolute-url";
 import useSWR from "swr";
 import mhl_citizens from '/utils/mhl-citizens.js'
 import { useState, useEffect } from 'react';
 import HunterFlow from "../components/HunterFlow";
+
 
 
 
@@ -51,6 +53,11 @@ export default function HuntingPage() {
                     <div className = "flex flex-initial w-1/4 h-full bg-secondary">
                         <Image src = {hunter.src} layout = 'intrinsic' width = {hunter.width} height = {hunter.height} alt = {hunter.alt} />
                     </div>
+                </div>
+            </div>
+            <div className ="flex flex-1 bg-secondary h-full w-screen ">
+                <div className = "flex flex-initial mx-auto m-40 bg-secondary">
+                    <Image src = {elk.src} layout = 'fixed' width = {elk.width} height = {elk.height} alt = {elk.alt} />
                 </div>
             </div>
             <div className = "flex flex-initial bg-primary flex-col w-screen h-screen">

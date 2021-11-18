@@ -1,13 +1,16 @@
-import { useForm } from 'react-hook-form';
+import { useForm, useFormState } from 'react-hook-form';
 import mhl_citizens from '../utils/mhl-citizens.js'
 
 
 export default function LinkWalletForm(props) {
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { register, handleSubmit, control, formState: { errors } } = useForm();
   const onSubmit = data => {
       console.log(data)
       createOrUpdateNewCitizen(data.CitizenId,data.FirstName,data.LastName, data.Email, props.address)
   };
+  const { isSubmitSuccessful } = useFormState({
+    control
+  })
 
   async function createOrUpdateNewCitizen(_CitizenId,_FirstName,_LastName, _Email, _Address) {
     try{
@@ -65,6 +68,7 @@ export default function LinkWalletForm(props) {
     <form
         className = "flex flex-auto flex-col w-2/3 mx-auto space-y-6 pt-6" 
         onSubmit={handleSubmit(onSubmit)}>
+      <div className = 'h-8 w-1/2 font-bold text-white'> {isSubmitSuccessful? "Successful Submit": ""}</div>
       <input
         className = "py-2 bg-gray-50 border-2 border-primary bg-secondary text-gray-900 sm:text-xl rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
         type="text" 
