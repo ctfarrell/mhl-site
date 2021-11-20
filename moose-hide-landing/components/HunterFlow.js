@@ -4,17 +4,26 @@ import { useState, useEffect } from 'react';
 import HunterEducationCard from './HunterEducationCard.js';
 import { HiArrowRight } from "react-icons/hi";
 import {HiCheck} from 'react-icons/hi'
+import { ethers } from 'ethers';
+import ethereums from '../utils/ethereum.js'
+
+
 
 export default function HunterFlow() {
     const [linkedWalletState, updateWalletState] = useState(false)
     const [userName,updateUserName] = useState("")
     const [currentWalletAddress,updateWalletAddress] = useState("")
-    const [classCompleted, updateClassComplete] = useState(false)
+    const [classComplete, updateClassComplete] = useState(false)
     const [hecClaimed, updateHecClaimed] = useState(false)
+    const [userState, updateUserState] = useState({})
+
+
+    // A Web3Provider wraps a standard Web3 provider, which is
+    // what MetaMask injects as window.ethereum into each page
 
 
     useEffect(() => {
-        console.log(linkedWalletState)
+        console.log("wallet state", linkedWalletState)
         }, [linkedWalletState]);
 /*
     useEffect(()=>{
@@ -29,7 +38,28 @@ export default function HunterFlow() {
             return true
         } if(classCompleted && !hecClaimed)
     }
+        
 */
+    async function acquireCard(){
+        console.log(currentWalletAddress,userState.tokenId)
+        try{
+            const getCardResult = await ethereums.getCard(currentWalletAddress, userState.tokenId)
+            console.log(getCardResult)
+            updateHecClaimed(true)
+        } catch(err) {
+            console.debug("failed to acquire card ",err)
+        }
+}
+    async function getContract() {
+        const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+        const account = accounts[0];
+        const provider = new ethers.providers.Web3Provider(window.ethereum)
+        const signer = provider.getSigner()
+        const name = await ethereums.getContractName()
+        console.log(name)
+        //const hecContract = new ethers.Contract(ethereums.hecAddress, ethereums.hecAbi, provider)
+        //console.log(hecContract.getContractName())
+    }
     async function getCitizenAccount() {
         const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
         const account = accounts[0];
@@ -45,13 +75,20 @@ export default function HunterFlow() {
             console.log("waiting on the user data")
             console.log(userData.data.firstName)
             updateUserName(userData.data.firstName)
-            if(userData!=='undefined'){console.log("wallet state is true"); updateWalletState(true)
+            if(userData!=='undefined'){console.log("wallet state is true"); 
+            updateWalletState(true)
+            updateClassComplete(userData.data.classCompleted)
+            console.debug("is class complete?",classComplete)
+            updateUserState(userData.data)
         updateWalletAddress(userAccount)}
          } catch(err){
              console.log("address doesn't exist",err)
+             updateUserState({})
+             updateHecClaimed(false)
              updateWalletState(false)
          }
     }
+
 
 
     return (
@@ -71,12 +108,17 @@ export default function HunterFlow() {
                     <HiArrowRight className = "my-top h-35 mt-8" color="white" size="60"/>
                     <div className="flex flex-col flex-none h-80 w-80 mx-auto place-items-center cursor-pointer place-self-auto group p-3">
                         <div className="flex flex-none rounded-full h-1/3 w-1/3 bg-white ">
-                            {classCompleted? <HiCheck className = "flex mx-auto my-auto place-items-center align-center" size="50"/>:<p/>}
+                            {userState.classCompleted? <HiCheck className = "flex mx-auto my-auto place-items-center align-center" size="50"/>:<p/>}
                         </div>
                         <h1 className="group-hover:font-bold text-white text-3xl font-bold text-center pt-8">Complete the Class</h1>
+                        {linkedWalletState?
                         <button className="my-10 py-2 bg-gray-50 border-2 border-primary bg-secondary text-gray-900 sm:text-xl rounded-lg focus:ring-blue-500 focus:border-blue-500 mx-auto block w-full p-2.5"
-                                >Schedule Class
-                        </button>
+                                onClick={accountExists}>Schedule Class
+                        </button>:
+                        <button className="my-10 py-2 bg-gray-50 border-2 border-primary bg-grey-400 text-gray-900 sm:text-xl rounded-lg focus:ring-blue-500 focus:border-blue-500 mx-auto block w-full p-2.5"
+                            >Schedule Class
+                            </button>
+                        }
                     </div>
                     <HiArrowRight className = "my-top h-35 mt-8" color="white" size="60"/>
                     <div className="flex flex-col flex-none h-80 w-80 mx-auto place-items-center cursor-pointer place-self-auto group p-3">
@@ -84,17 +126,20 @@ export default function HunterFlow() {
                             {hecClaimed? <HiCheck className = "flex mx-auto my-auto place-items-center align-center" size="50"/>:<p/>}
                         </div>
                         <h1 className="group-hover:font-bold text-white text-3xl font-bold text-center pt-8">Claim your Card</h1>
+                        {userState.classCompleted&&!hecClaimed?
                         <button className="my-10 py-2 bg-gray-50 border-2 border-primary bg-secondary text-gray-900 sm:text-xl rounded-lg focus:ring-blue-500 focus:border-blue-500 mx-auto block w-full p-2.5"
-                                >Mint Token
+                                onClick={acquireCard}>Claim Card
+                        </button>:
+                        <button className="my-10 py-2 bg-gray-50 border-2 border-primary bg-grey-400 text-gray-900 sm:text-xl rounded-lg focus:ring-blue-500 focus:border-blue-500 mx-auto block w-full p-2.5">
+                            Claim Card
                         </button>
+                        }
                     </div>
                 </div>
             </span>
             <div className = "flex flex-col">
                 {linkedWalletState?
-                    <p className = "text-white text-3xl mx-auto">
-                    Hi {userName}, your wallet is linked!
-                    </p>
+                <p></p>
                     :
                     <LinkWalletForm 
                     linkedWalletState = {linkedWalletState}
@@ -104,9 +149,19 @@ export default function HunterFlow() {
                     address={currentWalletAddress} />
                 }
             </div>
-            <div className = "flex ">
-                <HunterEducationCard firstName = "Chance" lastName = "Farrell" issueDate = "10/21/2018"/>
-            </div>
+            {hecClaimed?
+            <div className = "flex">
+                <HunterEducationCard 
+                firstName = {userState.firstName} 
+                lastName = {userState.lastName} 
+                issueDate = {userState.cardIssueDate} 
+                address={currentWalletAddress} 
+                token = {userState.tokenId} 
+                instructor={userState.instructor}
+                birthDate = {userState.birthDate}/>
+            </div>:
+            <p></p>
+            }
         </div>
     )
 }

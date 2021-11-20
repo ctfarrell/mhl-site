@@ -10,12 +10,14 @@ module.exports = {
       secondary: '#f4eeed',
       white: colors.white,
       red: colors.red,
+      grey: colors.gray,
     },
     colors: {
       primary: '#3a7356',
       secondary: '#f4eeed',
       white: colors.white,
       red: colors.red,
+      grey: colors.gray,
     },
     extend: {
       fontWeight: ['group-hover'],

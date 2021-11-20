@@ -68,7 +68,7 @@ export default function LinkWalletForm(props) {
     <form
         className = "flex flex-auto flex-col w-2/3 mx-auto space-y-6 pt-6" 
         onSubmit={handleSubmit(onSubmit)}>
-      <div className = 'h-8 w-1/2 font-bold text-white'> {isSubmitSuccessful? "Successful Submit": ""}</div>
+      <div className = 'h-8 w-full mx-auto text-3xl font-bold text-center text-white'> {isSubmitSuccessful? "Wallet Linking...": "Connect us to your wallet:"}</div>
       <input
         className = "py-2 bg-gray-50 border-2 border-primary bg-secondary text-gray-900 sm:text-xl rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
         type="text" 

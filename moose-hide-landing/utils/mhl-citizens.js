@@ -36,7 +36,7 @@ function getAllCitizens () {
         console.log(lengthOfAddress)
 
 }
-function createCard(_id, _firstName, _lastName,_email,_tokenId) 
+function createCard(_id, _firstName, _lastName,_email,_tokenId,_instructor,_birthDate,_issueDate) 
   {client.query(
     q.Create(
       q.Collection('mhl-citizens'),
@@ -45,12 +45,14 @@ function createCard(_id, _firstName, _lastName,_email,_tokenId)
         lastName: _lastName,
         email: _email,
         tokenId: _tokenId,
-        cardIssueDate:"today",
+        cardIssueDate: _issueDate,
+        birthDate: _birthDate,
+        instructor: _instructor,
         classCompleted: true,
         walletLinked: false,
         tokenClaimed: false}
      }
-    )
+  )
 )
 }
 
@@ -82,6 +84,27 @@ function getCitizenByAddress(_address) {
         .catch(error=>console.log("this is the error log",error))
 }
 
+function updateCardByRef (ref,_firstName, _lastName,_email,_tokenId,_instructor,_birthDate,_issueDate) {
+  {client.query(
+    q.Update(q.Ref(
+      q.Collection('mhl-citizens'),ref),
+      { data: {firstName: _firstName,
+        lastName: _lastName,
+        email: _email,
+        tokenId: _tokenId,
+        cardIssueDate: _issueDate,
+        birthDate: _birthDate,
+        instructor: _instructor,
+        walletLinked: true,
+        classCompleted: true}
+     }
+  )
+)
+}
+}
+
+
+
 function updateCitizenByRef (ref,_address,_firstName,_lastName,_email) {
   {client.query(
     q.Update(q.Ref(
@@ -92,7 +115,7 @@ function updateCitizenByRef (ref,_address,_firstName,_lastName,_email) {
         address: _address,
         walletLinked: true}
      }
-    )
+  )
 )
 }
 }
@@ -144,5 +167,6 @@ export default {
     getCitizenById: getCitizenById,
     getAllCitizens: getAllCitizens,
     updateCitizenByRef: updateCitizenByRef,
-    citizenSelfCreate: citizenSelfCreate
+    citizenSelfCreate: citizenSelfCreate,
+    updateCardByRef: updateCardByRef,
   }
