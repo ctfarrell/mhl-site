@@ -67,7 +67,7 @@ async function getCard(address, tokenId) {
     const hecWithSigner = hecContract.connect(mmSigner)
     console.log("wallet connected to signer")
     const tx = hecWithSigner.safeMint(address, tokenId)
-    await wait(25000)
+    await wait(45000)
     console.log(tx)
 }
 

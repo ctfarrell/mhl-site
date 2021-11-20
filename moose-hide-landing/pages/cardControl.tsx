@@ -1,4 +1,4 @@
-import HecForm from "../components/HecForm"
+import HecForm from "../components/HecForm.js"
 
 
 export default function cardControl() {
