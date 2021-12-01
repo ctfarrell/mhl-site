@@ -5,7 +5,7 @@ export default function HunterEducationCard(props) {
     return (
         <div className = "flex flex-col bg-primary w-screen pt-10 ">
             <div className = "flex flex-initial bg-primary">
-                <div className = "flex flex-initial flex-col bg-white justify-between object-contain mx-auto h-full w-1/3">
+                <div className = "flex flex-initial flex-col bg-white justify-between object-contain mx-auto h-full w-1/2">
                     <div className = "bg-white flex flex-none w-full h-6"/>
                     <div className = "flex flex-row flex-none h-full justify-between">
                         <div className = "flex flex-col flex-none h-full w-3/4">
