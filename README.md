@@ -18,7 +18,7 @@ we had some great folks on our team:
 
 The project was fairly open ended, but we did have to create some useable services and atleast one of those services had to utilize a blockchain.
 
-Our Completed Services were [Pavilion Rentals](https://dreamy-panini-3ecd39.netlify.app/pavilions) and [Hunters Education Cards](https://dreamy-panini-3ecd39.netlify.app/hunting) on a blockchain!
+:fire: :boom: Our Completed Services were [Pavilion Rentals](https://dreamy-panini-3ecd39.netlify.app/pavilions) and [Hunters Education Cards](https://dreamy-panini-3ecd39.netlify.app/hunting) on a blockchain! :boom: :fire:
 
 # How did we do it?
 We used a ton of free services and the [GitHub Student Pack](https://education.github.com/pack), Also: 
