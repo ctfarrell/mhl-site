@@ -1,7 +1,7 @@
 We used [Next.js](https://nextjs.org/) and [`npm`](https://www.npmjs.com/) to bootstrap this website!
 
 # Getting Started
-First, we'll need to make sure that [node](install node link) and [git](git install) are installed. so do that if you haven't already.
+First, we'll need to make sure that [node](https://nodejs.org/en/download/) and [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) are installed. so do that if you haven't already.
 
 Second, clone our git repo:
 ```
@@ -20,14 +20,15 @@ and **Welcome to Moose Hide Landing!**
 <p align="center">
   <img src="https://github.com/ctfarrell/mhl-site/blob/main/welcome.png" alt="mhl-homepage" />
 </p>
+
 # The Integrations
 
 Finally there are three key integrations that we'll need to setup to get the site fully working:
-1. **Jotform** - for reserving Pavilions and other fun things.
-2. **FaunaDB** - for our database that stores Hunter Education Card Data
-3. **Infura** - for our blockchain integration
+1. :dart: **Jotform** - for reserving Pavilions and other fun things.
+2. :raised_hands: **FaunaDB** - for our database that stores Hunter Education Card Data
+3. :hatching_chick: **Infura** - for our blockchain integration
 
-**Last** we'll want to deploy the site on either [Vercel](#deploy-on-vercel) or [Netlify](#deploy-on-netlify), both are super easy and we linked to instructions on how to do that below!
+:factory: **Last** we'll want to deploy the site on either [Vercel](#deploy-on-vercel) or [Netlify](#deploy-on-netlify), both are super easy and we linked to instructions on how to do that below!
 
 ## Setup Jotform
 
@@ -53,7 +54,7 @@ _It is very important that we name the collection **`mhl-citizens`**_
   <img src="https://github.com/ctfarrell/mhl-site/blob/main/fauna_create_collection.png" alt="create collection" />
 </p>
 
-Next we'll create two indexes:
+Next we'll create two indices on the **`mhl-citizens`** collection:
 The first index will have an index name of **`ID`** and a value of **`citizenId`**
 <p align="center">
   <img src="https://github.com/ctfarrell/mhl-site/blob/main/fauna_create_index.png" alt="create ID index" />
@@ -75,17 +76,31 @@ Copy the Key Value and paste it in the document
 <p align="center">
   <img src="https://github.com/ctfarrell/mhl-site/blob/main/fauna_key_paste.png" alt="create address index" />
 </p>
+
 Save the `mhl-citizens` document and you're all ready to go!
 
 ## Setup Infura
-## Learn More about Next.js
+Infura is a blockchain node integration service, here we're using if for some of our blockchain calls. Right now that just means interacting with our smart contract, but we have future integrations planned for a hunting tag / game tag marketplace!
 
-To learn more about Next.js, take a look at the following resources:
+We'll only need to do two things after creating an account:
+1. Create a project
+2. Get the ID for our Project
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Create an Infura Account [here](https://infura.io/register)
+Then we'll need to create a project with the button in the top right
+<p align="center">
+  <img src="https://github.com/ctfarrell/mhl-site/blob/main/infura_create_project.png" alt="infura create project" />
+</p>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Next we'll generate an endpoint for the Ropsten Network by going to our project setting and changing the endpoint option to Ropsten:
+<p align="center">
+  <img src="https://github.com/ctfarrell/mhl-site/blob/main/infura_copy_project.png" alt="infura create endpoint" />
+</p>
+
+Finally we'll copy the `PROJECT ID` and paste it in line 6 of the document in `mhl-site/moose-hide-landing/utils/ethereum.js`
+<p align="center">
+  <img src="https://github.com/ctfarrell/mhl-site/blob/main/infura_code_snippet.png" alt="infura create endpoint" />
+</p>
 
 ## Deploy on Vercel
 
@@ -98,3 +113,12 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 Another easy way to deploy your Next.js app is to use the [Netlify](https://www.netlify.com/with/nextjs/).
 
 Here is the [Netlify build Documentation](https://docs.netlify.com/configure-builds/get-started/) to host your site from a git repo and some specific [Next.js documentation for Netlify](https://docs.netlify.com/configure-builds/common-configurations/next-js/) for more details.
+
+## Learn More about Next.js
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
