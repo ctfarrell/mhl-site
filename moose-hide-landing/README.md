@@ -77,7 +77,7 @@ Copy the Key Value and paste it in the document
   <img src="https://github.com/ctfarrell/mhl-site/blob/main/fauna_key_paste.png" alt="create address index" />
 </p>
 
-Save the `mhl-citizens` document and you're all ready to go!
+Save the `mhl-citizens` document, launch the app with `npm run dev`, and you're connected to your very own database :checkered_flag:
 
 ## Setup Infura
 Infura is a blockchain node integration service, here we're using if for some of our blockchain calls. Right now that just means interacting with our smart contract, but we have future integrations planned for a hunting tag / game tag marketplace!
@@ -102,6 +102,7 @@ Finally we'll copy the `PROJECT ID` and paste it in line 6 of the document in `m
   <img src="https://github.com/ctfarrell/mhl-site/blob/main/infura_code_snippet.png" alt="infura create endpoint" />
 </p>
 
+Now we can save the document, and launch the app using `npm run dev`. Open the app and we can interact with our smart contract! :ambulance:
 ## Deploy on Vercel
 
 An easy way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.

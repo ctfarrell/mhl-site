@@ -3,7 +3,7 @@ import {abi} from "./hecABI.js"
 
 const itx = new ethers.providers.InfuraProvider(
   'ropsten', // or 'ropsten', 'rinkeby', 'kovan', 'goerli'
-  'ea6f9231bd6f4dfbb3a263e281865f31'
+  'ea6f9231bd6f4dfbb3a263e281865f31' // I know this isn't the greatest thing sorry
 )
 
 export default {
