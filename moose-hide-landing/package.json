@@ -36,6 +36,7 @@
     "react-hook-form": "^7.19.5",
     "react-icons": "^4.2.0",
     "react-jotform-embed": "^1.1.2",
+    "react-spinners": "^0.11.0",
     "swr": "^1.0.1",
     "web3modal": "^1.9.4"
   },

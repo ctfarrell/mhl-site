@@ -84,6 +84,15 @@ function getCitizenByAddress(_address) {
         .catch(error=>console.log("this is the error log",error))
 }
 
+
+function updateTokenClaimed (ref){
+  const tokenClaimedDoc = client.query(
+    q.Update(q.Ref(
+      q.Collection('mhl-citizens'),ref),
+      { data: {tokenClaimed: true}}))
+      return tokenClaimedDoc
+}
+
 function updateCardByRef (ref,_firstName, _lastName,_email,_tokenId,_instructor,_birthDate,_issueDate) {
   {client.query(
     q.Update(q.Ref(
@@ -169,4 +178,5 @@ export default {
     updateCitizenByRef: updateCitizenByRef,
     citizenSelfCreate: citizenSelfCreate,
     updateCardByRef: updateCardByRef,
+    updateTokenClaimed: updateTokenClaimed,
   }

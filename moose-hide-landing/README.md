@@ -32,7 +32,7 @@ Finally there are three key integrations that we'll need to setup to get the sit
 
 ## Setup Jotform
 
-*future content* @jcgill
+We used Jotform as a backend for our Pavilion Rentals. We'll share the Login Credentials in the Handoff Meeting.
 ## Setup FaunaDB
 
 To get started with FaunaDB, we'll need to [create an account](https://dashboard.fauna.com/accounts/register)

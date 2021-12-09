@@ -21,7 +21,7 @@ The project was fairly open ended, but we did have to create some useable servic
 :fire: :boom: Our Completed Services were [Pavilion Rentals](https://dreamy-panini-3ecd39.netlify.app/pavilions) and [Hunters Education Cards](https://dreamy-panini-3ecd39.netlify.app/hunting) on a blockchain! :boom: :fire:
 
 # How did we do it?
-We used a ton of free services and the [GitHub Student Pack](https://education.github.com/pack), Also: 
+We used a ton of free tier services, open source software, and the [GitHub Student Pack](https://education.github.com/pack), Also: 
 - :art: [Canva](https://www.canva.com/design/DAEqHMUV1jI/yO0TfZMgYLWZMXgmgCMsnA/view?website#4:town-of-moose-hide-landing) - mostly for mockups and some icons / graphics
 - :tophat: [NextJS](https://nextjs.org/) - Javascript Framework which made it super easy to spin up a website for a bunch of beginners :)
 - :trophy: [TailwindCSS](https://tailwindcss.com/) - A super easy-to-use CSS thing that made styling the website a breeze!
@@ -30,9 +30,10 @@ We used a ton of free services and the [GitHub Student Pack](https://education.g
 - :floppy_disk: [react-icons](https://react-icons.github.io/react-icons/) - was a super simple icon integration that helped make some simple UI Components really clear.
 - :zap: [ethers.js](https://docs.ethers.io/v5/) - drives our blockchain integration on Ropsten
 - :skull: [Remix](https://remix.ethereum.org/) - this is how we deployed our Smart Contract on Ropsten
+- :hatching_chick: [Infura](https://infura.io/) - for our blockchain integration and listening to our contracts
 - :fox_face: [Metamask](https://metamask.io/) - Metamask had some excellent docs which made it perfect for our first (and only) wallet integration!
 - :star: [OpenZepplin](https://docs.openzeppelin.com/contracts/4.x/wizard) - their contract wizard made creating our ERC721 contracts super simple! 
 - :raised_hands: [FaunaDB](https://fauna.com/) - Fauna was an incredibly easy database to setup, the performance was incredible and we really owe the completion of the Hunters Education Card process to their service and excellent documentations. :clap:
 
 # How do I use it?
-Check the [README.md](https://github.com/ctfarrell/mhl-site/tree/main/moose-hide-landing) in the moose-hide-landing directory!
+Check the [README](https://github.com/ctfarrell/mhl-site/tree/main/moose-hide-landing) in the moose-hide-landing directory!

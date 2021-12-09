@@ -10,6 +10,7 @@ export default {
     getContractName: getContractName,
     getCard: getCard,
     waitTransaction: waitTransaction,
+    wait: wait,
   }
 
 //contract deployed: https://ropsten.etherscan.io/address/0x20b77a15a7fb1efdcda8500d5a1767b4490f889c
@@ -17,7 +18,7 @@ const hecAddress = "0x20b77A15a7fb1EFdcda8500d5a1767B4490F889C";
 const hecABI =  abi.hec;
 const hecContract = new ethers.Contract(hecAddress, hecABI, itx)
 
-const wait = (milliseconds) => {
+ async function wait(milliseconds){
     return new Promise((resolve) => setTimeout(resolve, milliseconds))
   }
   
@@ -67,10 +68,14 @@ async function getCard(address, tokenId) {
     const hecWithSigner = hecContract.connect(mmSigner)
     console.log("wallet connected to signer")
     const tx = hecWithSigner.safeMint(address, tokenId)
-    await wait(45000)
+    //await wait(45000)
     console.log(tx)
+    return tx
 }
 
+async function getTransaction(hash){
+
+}
 
 async function getBalance() {
     response = await itx.send('relay_getBalance', [signer.address])
