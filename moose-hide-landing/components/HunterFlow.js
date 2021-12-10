@@ -146,9 +146,13 @@ async function updateTokenClaimed(_address) {
                             <p/>}
                         </div>
                         <h1 className="group-hover:font-bold text-white text-3xl font-bold text-center pt-8">Register</h1>
+                        {!linkedWalletState?
                         <button className="my-10 py-2 bg-gray-50 border-2 border-primary bg-secondary text-gray-900 sm:text-xl rounded-lg focus:ring-blue-500 focus:border-blue-500 mx-auto block w-full p-2.5"
-                                onClick = {accountExists} >Connect Wallet
-                        </button>
+                                onClick = {accountExists} >{!walletLinking?"Connect Wallet":"Connecting Wallet"}
+                        </button>:
+                        <button className="my-10 py-2 bg-gray-50 border-2 border-primary bg-grey-400 text-gray-900 sm:text-xl rounded-lg focus:ring-blue-500 focus:border-blue-500 mx-auto block w-full p-2.5"
+                        >Wallet Connected
+                        </button>}
                     </div>
                     <HiArrowRight className = "my-top h-35 mt-8" color="white" size="60"/>
                     <div className="flex flex-col flex-none h-80 w-80 mx-auto place-items-center cursor-pointer place-self-auto group p-3">
