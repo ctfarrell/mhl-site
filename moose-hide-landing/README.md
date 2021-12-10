@@ -30,6 +30,12 @@ Finally there are three key integrations that we'll need to setup to get the sit
 
 :factory: **Last** we'll want to deploy the site on either [Vercel](#deploy-on-vercel) or [Netlify](#deploy-on-netlify), both are super easy and we linked to instructions on how to do that below!
 
+## Blockchain Flow
+Here's a swimlane chart that maps the Database Integration with the Hunter Education Card NFT Minting Process
+<p align="center">
+  <img src="https://github.com/ctfarrell/mhl-site/blob/main/blockchain_flow.png" alt="blockchain flow" />
+</p>
+
 ## Setup Jotform
 
 We used Jotform as a backend for our Pavilion Rentals. We'll share the Login Credentials in the Handoff Meeting.
