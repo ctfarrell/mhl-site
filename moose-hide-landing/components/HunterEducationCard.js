@@ -5,9 +5,9 @@ export default function HunterEducationCard(props) {
     return (
         <div className = "flex flex-col bg-primary w-screen pt-10 ">
             <div className = "flex flex-initial bg-primary">
-                <div className = "flex flex-initial flex-col bg-white justify-between object-contain mx-auto h-full w-1/2">
+                <div className = "flex flex-none flex-col bg-white mx-auto w-1/3">
                     <div className = "bg-white flex flex-none w-full h-6"/>
-                    <div className = "flex flex-row flex-none h-full justify-between">
+                    <div className = "flex flex-row flex-none h-80 justify-between">
                         <div className = "flex flex-col flex-none h-full w-3/4">
                             <h1 className="flex flex-none mx-auto text-center text-3xl font-bold mr-6">Colorado Parks and Wildlife</h1>
                             <div className = "pl-8 pt-8 flex flex-row w-3/4">
@@ -34,17 +34,17 @@ export default function HunterEducationCard(props) {
                             {props.firstName  + " " + props.lastName}
                             </h1>
                             <h1 className = "flex flex-none text-xl text-left pl-8"> {props.address}</h1>                    </div>
-                        <div className = "flex flex-col flex-none h-full w-1/4 relative right-0">
+                        <div className = "w-1/4 relative right-0">
                             <div className = 'flex flex-auto h-24 w-24 absolute top-5 inset-x-0 mx-auto'>
                                 <Image src = {cpr.src} layout = 'intrinsic' width = {cpr.width} height = {cpr.height} alt = {cpr.alt} />
                             </div>
                             <div className = "flex bg-primary bg-gradient-to-t from-white h-full w-16 mx-auto"/>
                         </div>
                     </div>
-                    <div className = "flex flex-none bg-primary w-11/12">
-                        <h1 className = "font-bold text-2xl text-white text-center mx-auto my-auto">HUNTER EDUCATION CARD</h1>
+                    <div className = "flex flex-none flex-col bg-primary mx-auto w-11/12 h-10">
+                        <h1 className = "font-bold text-xl text-white text-center mx-auto my-auto">HUNTER EDUCATION CARD</h1>
                     </div>
-                    <div className = "bg-white flex flex-none w-full h-6"/>
+                    <div className = " flex flex-none bg-white w-full h-6"/>
                 </div>
             </div>
         </div>
